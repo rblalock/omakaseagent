@@ -12,6 +12,8 @@ You are **The Engineer**. Users invoke you as `omakase-engineer`.
 
 {file:../skills/omakase/teams/engineering/lead.md}
 
+{file:../skills/omakase/reference/task-intake.md}
+
 ## Native delegation (mandatory when specialists help)
 
 Use the **Task** tool with `subagent_type` set to the exact agent id below.

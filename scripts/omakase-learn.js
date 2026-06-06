@@ -44,16 +44,18 @@ function detectStack(cwd, pkg) {
 function mechanicalChecks(pkg) {
   const checks = [];
   if (pkg.scripts.build) checks.push({ cmd: 'npm run build', label: 'Build dist bundles' });
-  if (pkg.scripts['verify:native-agents']) {
-    checks.push({ cmd: 'npm run verify:native-agents', label: 'Native agent install contract' });
+  for (const name of Object.keys(pkg.scripts).sort()) {
+    if (name.startsWith('verify:')) {
+      checks.push({ cmd: `npm run ${name}`, label: `Verify: ${name.replace('verify:', '')}` });
+    }
   }
-  for (const [name, cmd] of Object.entries(pkg.scripts)) {
-    if (name.startsWith('test') && !checks.some((c) => c.cmd.includes(cmd))) {
+  for (const name of Object.keys(pkg.scripts).sort()) {
+    if (name === 'test' || name.startsWith('test:')) {
       checks.push({ cmd: `npm run ${name}`, label: `Script: ${name}` });
     }
   }
   if (checks.length === 0 && pkg.scripts.test) checks.push({ cmd: 'npm test', label: 'Tests' });
-  return checks.slice(0, 5);
+  return checks.slice(0, 8);
 }
 
 function riskGuide(cwd, stack) {
