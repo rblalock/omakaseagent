@@ -20,6 +20,19 @@ Complexity is a cost. Every layer, abstraction, conditional, and file is a liabi
 - If I deleted this entire file / component / abstraction, what would actually break?
 - Is this solving a real problem or a problem we invented to justify the cleverness?
 
+**Code Judo Ladder (engineering reflex):**
+Before writing new custom code, stop at the first rung that honestly holds:
+
+1. **Delete the need** — does this need to exist at all, or is it speculative?
+2. **Change the model** — can a simpler data model, flow, or boundary make the feature disappear?
+3. **Use the repo** — is there already a canonical helper, pattern, command, adapter, or policy here?
+4. **Use the standard library or platform** — can the language, runtime, browser, database, shell, or OS do this directly?
+5. **Use an installed dependency** — if the repo already depends on the tool, use it before adding bespoke code.
+6. **Inline or local helper** — can this be one direct line or a tiny file-local helper with no new public surface?
+7. **Minimum custom code** — only then write new code, scoped to the actual invariant and current caller.
+
+The ladder is a decision aid, not a minimalism religion. Do not delete trust-boundary validation, data-loss protection, security, accessibility, required observability, or behavior-boundary tests to win on line count.
+
 **File size discipline (non-negotiable smell):**
 - Treat a file crossing ~1000 lines because of your change as a presumptive maintainability problem.
 - Before letting a file grow past that threshold, seriously explore extraction, decomposition, or a different architectural cut.
@@ -92,6 +105,7 @@ Use this rubric on non-trivial engineering plans, implementations, reviews, and 
 When running critique in an engineering context, additionally evaluate:
 
 - **Code Judo & Structural Simplification**: Were obvious opportunities to delete whole layers, branches, or abstractions missed? Is the change the simplest possible structure that still delivers the behavior?
+- **Code Judo Ladder Coverage**: Did we check delete/model/repo/stdlib-platform/installed-dependency/inline-helper before adding custom code?
 - **File & Module Health**: Did this change push any file past healthy size boundaries (~1000 lines) without strong justification? Is logic living in the right layer?
 - **Spaghetti & Boundary Violations**: Did we introduce new ad-hoc conditionals, feature flags in shared code, or logic that belongs in a dedicated abstraction?
 - **Directness vs Magic**: Is the implementation direct and legible, or does it rely on clever indirection, heavy generics, or "magic" that will bite future maintainers?

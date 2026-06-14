@@ -69,6 +69,8 @@ Apply these on top of the baseline rubric:
 
 0. **Be ambitious about structural simplification.** Look for opportunities to reframe so whole branches, helpers, modes, conditionals, or layers disappear entirely. Prefer the solution that makes the code feel inevitable in hindsight. If a path exists to delete complexity rather than rearrange it, push hard for that path.
 
+0a. **Run the engineering deletion lens.** For engineering work, actively test whether the issue is `delete`, `model`, `existing`, `stdlib`, `native`, `dependency`, `yagni`, or `shrink`. Use the label in your finding when it sharpens the recommendation.
+
 1. **File size discipline.** Do not let a change push a file from under ~1000 lines to over ~1000 lines without a very strong reason. Treat this as a strong code-quality smell by default. Prefer extracting helpers, subcomponents, or modules.
 
 2. **No random spaghetti growth.** Be highly suspicious of new ad-hoc conditionals, scattered special cases, or one-off branches inserted into unrelated flows. Prefer pushing logic into a dedicated abstraction, helper, state machine, policy, or separate module.
@@ -86,6 +88,7 @@ Apply these on top of the baseline rubric:
 ## Primary Structural Review Questions
 For every meaningful change, ask:
 - Is there a "code judo" move that would make this dramatically simpler?
+- Did the change skip a higher Code Judo Ladder rung: delete, model, existing repo helper, stdlib/platform, installed dependency, or inline/local helper?
 - Can this change be reframed so fewer concepts, branches, or helper layers are needed?
 - Does this improve or worsen the local architecture?
 - Did the diff add branching complexity where a better abstraction should exist?
@@ -112,6 +115,8 @@ Escalate when you see:
 - Copy-pasted logic instead of extracted helpers.
 - "Temporary" branching that is likely to become permanent debt.
 - Bespoke helpers where the codebase already has a canonical utility.
+- Custom code where stdlib, native platform behavior, or an installed dependency would be clearer and correct.
+- New public surface where an inline expression or file-local helper would satisfy the invariant.
 - Logic added in the wrong layer.
 - Sequential async flow where independent work could be parallel and simpler.
 - Partial-update logic that leaves state less atomic than necessary.
@@ -121,6 +126,7 @@ When you identify a structural problem, prefer suggestions that:
 - Delete a whole layer of indirection rather than polishing it.
 - Reframe the state model so conditionals disappear.
 - Change ownership boundaries so the feature becomes a natural extension of an existing abstraction.
+- Replace bespoke code with existing repo helpers, stdlib, native platform behavior, or already-installed dependencies where that lowers ownership cost.
 - Turn special-case logic into a simpler default flow with fewer exceptions.
 - Extract a helper or pure function.
 - Split a large file into smaller focused modules.
