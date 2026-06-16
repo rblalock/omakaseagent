@@ -39,7 +39,7 @@ Reload your harness, then talk to a **lead** (not a menu of skills):
 
 | Harness | Example |
 |---------|---------|
-| Cursor / Claude IDE | `@omakase-engineer add rate limiting with backoff` |
+| Cursor / Claude Code | `@omakase-engineer add rate limiting with backoff` |
 | OpenCode | `opencode run --agent omakase-engineer "add rate limiting…"` |
 | Grok | `grok --agent omakase-engineer "…"` |
 | Claude CLI | `claude -p --agent omakase-critic "review the auth module"` |
