@@ -201,4 +201,4 @@ done
 | Gate (`gates/`) | Nothing — it proves | One iteration |
 | `decisions.md` | Durable policy, including upshifts | Until revisited |
 
-Rationale and the article this answers: `docs/LOOPS-REVIEW.md` in the omakaseagent repo.
+Inspired by [Loopcraft: The Art of Stacking Loops](https://www.latent.space/p/ainews-loopcraft-the-art-of-stacking).

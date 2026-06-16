@@ -13,7 +13,7 @@ Ship dark-factory Phase 4 (scenario evals), Phase G (project agents on learn), P
 - `npm run verify:scenario-evals` — 6 eval contracts pass against `skill/` + dist engineer
 - `npm run verify:drift` — TEAMS.md + dist lead bundles aligned
 - `omakase learn --dry-run` — proposes project-agents for skill + CLI signals
-- Deferred A/B/F documented in `docs/archive/2026-06-08-deferred-expansion.md`
+
 
 ## Mechanical evidence
 

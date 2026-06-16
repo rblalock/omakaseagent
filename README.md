@@ -82,13 +82,6 @@ npx omakaseagent skills install cursor   # or: claude | agents | grok | codex
 
 Also on the skills ecosystem: `npx skills add rblalock/omakaseagent` ([skills.sh](https://skills.sh/rblalock/omakaseagent)).
 
-**No terminal?** Omakase works in chat apps. Download
-[omakase-skill.zip](https://omakaseagent.com/omakase-skill.zip),
-then upload it in Claude (Customize → Skills → Upload skill) or ChatGPT
-(Skills → New skill → Upload from your computer). In chat
-you get the standard (rules + critique gate); the full kitchen (leads, project
-memory) needs a coding harness.
-
 Use `npx omakaseagent skills install --no-native-agents` for skill-only. Verify artifacts: `npm run verify:native-agents`.
 
 ## Developing this repo
@@ -102,10 +95,6 @@ npm run verify:native-agents
 npx omakaseagent init      # dogfood in this clone
 npx omakaseagent learn     # factory layout for this repo
 ```
-
-Level 4 methodology: [skill/reference/dark-factory.md](skill/reference/dark-factory.md). Stacking loops: [skill/reference/loops.md](skill/reference/loops.md) (rationale: [docs/LOOPS-REVIEW.md](docs/LOOPS-REVIEW.md)). Loop state: `npx omakaseagent status` / `npx omakaseagent status --gates`. Multi-agent E2E: [examples/factory-e2e/](examples/factory-e2e/). Learn snapshot: [examples/factory-dogfood/](examples/factory-dogfood/).
-
-Do not commit local harness dirs (`.cursor/`, `.claude/`, etc.) — regenerate with `init`. Personas: `skill/teams/`.
 
 ## License
 

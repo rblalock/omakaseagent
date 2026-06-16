@@ -6,7 +6,7 @@
 
 ## Seed
 
-Review [Loopcraft: The Art of Stacking Loops](https://www.latent.space/p/ainews-loopcraft-the-art-of-stacking) against the dark factory and ship the omakase way of loops: a named loop ladder, standing loop charters, an async checkpoint contract, and BYO-runner guidance — markdown-first, no orchestration engine. Rationale: `docs/LOOPS-REVIEW.md`.
+Review [Loopcraft: The Art of Stacking Loops](https://www.latent.space/p/ainews-loopcraft-the-art-of-stacking) against the dark factory and ship the omakase way of loops: a named loop ladder, standing loop charters, an async checkpoint contract, and BYO-runner guidance — markdown-first, no orchestration engine.
 
 ## Scenarios
 
