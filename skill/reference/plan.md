@@ -16,10 +16,13 @@ A mediocre plan is worse than no plan. Every Omakase plan must itself pass the C
 - Any request that will result in significant code or technical decisions
 - "Sketch the core data model", "API surface", "backend service" or similar technical depth
 
-**Non-Engineering Signals (core standards only — do not merge engineering extensions)**:
-- Pure product strategy, GTM, org design, high-level roadmap, ICP/positioning/pricing work with explicit or implied "high-level" or "no implementation details" framing.
-- Writing, narrative, or process-focused requests: "develop the messaging", "write the strategy brief for execs", "design a better operating rhythm for feature requests", "critique this customer email sequence for voice".
-- Requests that actively disclaim technical depth.
+**Strong Prose / Writing signals** (merge `reference/prose.md` extensions — do not merge engineering extensions unless technical architecture is in scope):
+- Writing, narrative, or copy-focused requests: "develop the messaging", "write the strategy brief for execs", "critique this customer email sequence for voice", "edit this draft", "remove AI voice from this doc"
+- Pure product strategy, GTM, positioning, ICP/pricing, exec briefs, one-pagers with explicit or implied "high-level" or "no implementation details" framing
+- Process or org design **when the deliverable is primarily prose** (operating rhythm doc, customer communication plan)
+
+**Non-Engineering without prose-heavy output** (core standards only — no engineering, no prose extensions):
+- Abstract planning where the plan itself is not a writing artifact and synthetic voice is not the risk (e.g. a bare milestone table)
 
 **Mixed / Ambiguous (common)**:
 - When the request combines product/strategy with any meaningful technical architecture, data model, or implementation implications → merge engineering extensions for the relevant portions only.
@@ -34,8 +37,8 @@ A good plan is not a list of tasks. It is a clear, reasoned artifact that reduce
 Required elements:
 
 1. **Domain Detection & Merge Declaration** (mandatory, placed early — right after Goal Restatement or as a top callout box): Explicitly state the detected domain and merge decision with reasoning. Examples:
-   - "Domain: Pure product strategy / GTM. Standards: Core Omakase only (no engineering extensions merged). Reason: Request was high-level positioning and launch phases with no technical architecture or implementation content."
-   - "Domain: Mixed (product positioning + technical implementation sketch). Standards: Core + Engineering extensions (applied to data model and API sections for code judo and contract clarity). Reason: Explicit request for both strategy and core data model/API surface."
+   - "Domain: Pure product strategy / GTM. Standards: Core + Prose extensions (phrase/structure deslop, taste.md voice). Reason: Request was high-level positioning and launch phases with no technical architecture."
+   - "Domain: Mixed (product positioning + technical implementation sketch). Standards: Core + Engineering extensions (data model/API sections) + Prose extensions (messaging sections). Reason: Explicit request for both strategy copy and core data model/API surface."
    This fulfills the requirement that every plan (and its subsequent critique) transparently documents whether engineering standards were correctly avoided or applied.
 2. **Problem / Goal Restatement** (sharper and more precise than the original request)
 3. **Key Constraints & Non-Goals** (what we are deliberately *not* doing and why)
@@ -49,7 +52,8 @@ Required elements:
 ## Quality Bar
 
 - Ruthless simplicity in the *plan itself*. Bloated plans are a smell.
-- The plan must pass the Critique Rubric (core only for pure product/strategy/writing work; core + engineering extensions when the plan contains meaningful technical decisions or architecture).
+- The plan must pass the Critique Rubric (core + prose extensions for writing-heavy plans; core + engineering when the plan contains meaningful technical decisions; both when mixed).
+- The plan itself must satisfy `reference/prose.md` Baseline — plans are prose and must not ship with synthetic AI voice.
 - Every non-obvious recommendation must have "Why this approach" reasoning.
 - The Domain Detection & Merge Declaration must itself be accurate and defensible (this is part of the self-critique gate).
 - The plan should feel like it was written by someone who has actually shipped similar work and knows where things usually go wrong.

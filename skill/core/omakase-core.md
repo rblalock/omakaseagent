@@ -32,6 +32,14 @@ Use this rubric to judge every major output:
 
 **The critique gate is mandatory.** No significant output leaves without being evaluated against this rubric (core + any relevant team extensions).
 
+## Prose deslop (all agents)
+
+You write prose constantly — responses, handoffs, gate reports, memory, docs, comments. **Apply `reference/prose.md` Baseline on every prose output you produce or edit** (cut throat-clearing, false agency, synthetic voice; respect `taste.md` voice).
+
+- **Writing-heavy work** (emails, GTM, strategy briefs, copy critique): load full `reference/prose.md` extensions; merge additively in critique/plan per `reference/critique.md`.
+- **Engineering work:** pervasive **code** deslop lives in `reference/engineering.md`; still apply prose Baseline to READMEs, PR text, gate sections, and user-facing strings.
+- **Critics / Deslop Critic:** full prose extensions when synthetic voice is the dominant failure mode.
+
 ## Core Philosophy
 
 - Trust the chef — state the goal, we decide the approach.
