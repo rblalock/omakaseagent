@@ -25,11 +25,16 @@ Gather signals from multiple layers, in rough priority order:
 - Target is primarily `SKILL.md`, skill-shaped reference under `skill/`, or persona markdown for team packaging
 - Do **not** merge engineering extensions for pure skill audits; use the skill-judge rubric + core Omakase slop/taste bullets
 
-**Non-Engineering / Core-Only Signals** (use core Omakase Critique Rubric *only*; do NOT merge engineering extensions):
+**Strong Prose / Writing signals** (merge `reference/prose.md` extensions; do NOT merge engineering extensions unless code/architecture is also in scope):
+- "Edit this draft", "remove AI voice", "humanize", "review this email/doc/post/README copy"
 - Explicit qualifiers: "high-level", "product strategy", "GTM", "positioning", "messaging", "voice and tone", "exec brief", "one-pager", "process design", "operating rhythm", "customer communication", "without any implementation or code details"
 - Pure writing, narrative, or documentation critique ("review this email", "strengthen the argument in this doc", "improve clarity of this strategy brief")
 - High-level product or process discussion ("plan the GTM", "critique our feature intake process for decision quality")
 - Design, writing, or planning work where the request explicitly avoids or disclaims technical depth
+
+**Non-Engineering without prose-heavy writing** (core rubric only; no engineering, no prose extensions):
+- Abstract process or org design where synthetic voice is not the dominant failure mode
+- When the artifact is primarily structural/logical rather than shipped prose (e.g. a checklist template with no narrative)
 
 **Weaker / Mixed signals**:
 - Ambiguous or borderline cases (e.g., "plan the developer platform improvements" or "add X feature" without qualifiers) → **ask once**: "This request has elements that could be product/strategy focused or involve implementation. Should I apply the full engineering critique standards (code judo, file health, deslop, etc.) in addition to the core rubric, or stick to core standards only?"
@@ -40,11 +45,13 @@ When in doubt, prefer **asking once** over guessing. Never silently apply the wr
 ## Merge Rules
 
 1. Always load the core 8-bullet rubric first.
-2. Load domain extensions additively. Engineering extensions are never applied to pure product, strategy, writing, process, or high-level design work.
+2. Load domain extensions additively. Engineering extensions are never applied to pure product, strategy, writing, process, or high-level design work. Prose extensions merge for writing-heavy work; they do not replace the core rubric.
 3. **Domain Detection & Merge Declaration (mandatory for every critique output)**: At the very top, after the summary verdict, explicitly declare:
    - The detected domain (e.g., "Pure product strategy", "Mixed (product positioning + technical data model)", "High-level process design / writing").
    - Exactly what was merged (or not): e.g. "Core Omakase Critique Rubric only (no engineering extensions: request was high-level GTM strategy with explicit 'no implementation details' framing)."
    - Or: "Core + Engineering extensions (code judo, file & module health, deslop density) because the request includes technical architecture and implementation decisions."
+   - Or: "Core + Prose extensions (phrase/structure deslop, directness, rhythm) because the target is a writing artifact or customer-facing copy."
+   - Or: "Core + Engineering + Prose (section-scoped) because the deliverable mixes technical architecture and narrative copy."
    This ensures every output transparently documents whether engineering standards were correctly or incorrectly applied.
 4. A deliverable can pass the core 8 and still fail under the merged engineering lens when applicable. Both standards apply simultaneously only when engineering content is present.
 
@@ -55,6 +62,14 @@ When in doubt, prefer **asking once** over guessing. Never silently apply the wr
 - Direct/boring/maintainable vs magic or thin abstractions
 - Type and contract clarity
 - Pervasive deslop (comments, defensive code, repeated mutation, scattered state)
+
+**Current Prose extensions to merge** (from `reference/prose.md`):
+- Phrase density (throat-clearing, jargon, hedging stacks, vague declaratives)
+- Structural tells (binary contrasts, false agency, meta-commentary, dramatic fragmentation)
+- Directness, rhythm, trust, authenticity, density (lightweight 5-dimension score when helpful)
+- Context Fidelity to `taste.md` voice — deletion must not flatten intentional brand register
+
+**Baseline prose deslop** (from `reference/prose.md` Baseline section) applies to **every agent** on any prose they write, even when prose extensions are not formally merged for critique.
 
 Future domains will add their own additive sections using the same pattern.
 

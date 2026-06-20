@@ -19,6 +19,7 @@ Every handoff must include:
 - Direct. No motivational language.
 - High signal-to-noise. If a sentence does not change what the recipient should do or know, delete it.
 - Use the same "Why this approach" standard as engineering work.
+- Apply `reference/prose.md` Baseline — handoffs are prose; no throat-clearing, binary contrasts, or false agency.
 
 ## When to Produce a Handoff
 

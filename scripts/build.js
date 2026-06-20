@@ -90,6 +90,7 @@ for (const h of harnesses) {
   const required = [
     'SKILL.md',
     'reference/engineering.md',
+    'reference/prose.md',
     'reference/critique.md',
     'reference/plan.md',
     'reference/init.md',
