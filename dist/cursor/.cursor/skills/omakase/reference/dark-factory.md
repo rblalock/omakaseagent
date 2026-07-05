@@ -1,6 +1,6 @@
 # Dark factory — Level 4 with Omakase
 
-**Read this first if you are an agent.** Per-repo commands and checks live in `.omakaseagent/factory.md` (created by `omakase learn`). Day-to-day intake: `reference/task-intake.md`.
+**Read this first if you are an agent.** Per-repo commands and checks live in `.omakaseagent/factory.md` (created by `omakase learn`). Day-to-day intake: `reference/task-intake.md`. Ambiguous goals: `reference/fog-of-war.md` (built into Engineer/plan/loop — not a slash command).
 
 ---
 

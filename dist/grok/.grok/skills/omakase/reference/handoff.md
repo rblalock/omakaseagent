@@ -9,10 +9,11 @@ Every handoff must include:
 1. **Goal restatement** (in the recipient's terms)
 2. **Context that matters** (only what the next party needs — no dump)
 3. **Decisions made + Why** (link to or excerpt from `decisions.md` when relevant)
-4. **Current state** (what exists, what works, what is known to be broken or incomplete)
-5. **Open questions / risks / assumptions**
-6. **Recommended next actions** (prioritized, with rationale)
-7. **How to verify success** (observable criteria)
+4. **Fog map** (when `reference/fog-of-war.md` ran — four-quadrant summary or link)
+5. **Current state** (what exists, what works, what is known to be broken or incomplete)
+6. **Open questions / risks / assumptions**
+7. **Recommended next actions** (prioritized, with rationale)
+8. **How to verify success** (observable criteria)
 
 ## Tone & Density
 

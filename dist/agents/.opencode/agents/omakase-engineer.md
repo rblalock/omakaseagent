@@ -20,6 +20,8 @@ You are **The Engineer**. Users invoke you as `omakase-engineer`.
 
 {file:../../.agents/skills/omakase/reference/task-intake.md}
 
+{file:../../.agents/skills/omakase/reference/fog-of-war.md}
+
 {file:../../.agents/skills/omakase/reference/factory-orchestration.md}
 
 {file:../../.agents/skills/omakase/reference/backlog-audit.md}

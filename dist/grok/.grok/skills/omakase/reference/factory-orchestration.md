@@ -36,10 +36,11 @@ flowchart LR
 
 ### Phase 1 — Intake (Engineer)
 
-1. Read `factory.md`, `taste.md`, `decisions.md`, `reference/task-intake.md`.  
-2. Publish **Task brief** (plain language).  
-3. Class **2+:** draft scenarios → one user confirm.  
-4. Save brief to `.omakaseagent/handoffs/<date>-<slug>-brief.md` on multi-step or Class 2+ work.
+1. Read `factory.md`, `taste.md`, `decisions.md`, `reference/task-intake.md`, `reference/fog-of-war.md`.  
+2. **Fog walk** when the goal is ambiguous — quadrant map in thread or handoff; skip when Class 0–1 and clear.  
+3. Publish **Task brief** (plain language) from the map + repo recon.  
+4. Class **2+:** draft scenarios → one user confirm.  
+5. Save brief (and fog map when produced) to `.omakaseagent/handoffs/<date>-<slug>-brief.md` on multi-step or Class 2+ work.
 
 ### Phase 2 — Work (Engineer + specialists)
 

@@ -131,15 +131,16 @@ An iteration that finds no eligible item flags anything it passed over (`SKIPPED
 | Step | Who | Action |
 |------|-----|--------|
 | 1 | Human | Approve the charter — replace `**Approval:** UNAPPROVED` with `Approved by <name> on <date>`. **Agents must show UNAPPROVED and wait; never edit this line.** |
-| 2 | Agent + human | If backlog has no TODO plans: **interview the human** — what the loop should work on, out of scope, priority/order. Draft charter + queue + `backlog/NNN-*.md` from their answers (repo recon only to inform proposals, not to drive the queue). **Do not start the drain loop until plans exist.** |
-| 3 | Human | Confirm the proposed queue once. Approve the charter. Then say "run the loop." |
+| 2 | Agent + human | If backlog has no TODO plans: **interview first** using **`reference/fog-of-war.md` setup mode** — present concrete questions (priority, out-of-scope, risk appetite, taste) and a **PROPOSED** queue informed by repo recon only. **Do not** run `omakase learn`, write `backlog/NNN-*.md`, or scaffold execution plans until the human answers and confirms direction. |
+| 3 | Human | Confirm the proposed queue once (edit or approve). **Then** agent may run `omakase learn` if factory layout is missing and write backlog plans. Approve the charter. Then say "run the loop." |
 
-Empty backlog + "run the loop" = **setup phase only** — interview, propose backlog, one confirm, charter approval — then the belt runs.
+Empty backlog + "run the loop" = **setup phase only** — fog interview → human confirm → **then** materialize plans — charter approval — then the belt runs.
 
 ## Agent NEVER (loop mode)
 
 - **NEVER** replace `UNAPPROVED` on the charter Approval line — only a human may approve a standing order.
 - **NEVER** skip the setup interview + human confirm when the backlog has no TODO items (unless the user already pointed at specific `backlog/NNN-*.md` files).
+- **NEVER** run `omakase learn` or write `backlog/NNN-*.md` before the human confirms the proposed queue from the fog setup interview.
 - **NEVER** prepend ledger rows — append at the **bottom** of the ledger table; `EMPTY` must be the **last** row.
 - **NEVER** flip a gate's `**Review:**` line — write `PENDING` only; humans accept/reject at batch review.
 

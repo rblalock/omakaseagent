@@ -8,7 +8,7 @@ The factory pattern (see `reference/dark-factory.md`) tries to **replace routine
 
 **You are not building a runner.** You are setting up **what must be proven** and **which commands prove it**.
 
-**Read first:** `reference/dark-factory.md` (goals + what automation means), `.omakaseagent/factory.md` (this repo's checks), `taste.md`, `decisions.md`.
+**Read first:** `reference/dark-factory.md` (goals + what automation means), `.omakaseagent/factory.md` (this repo's checks), `taste.md`, `decisions.md`. Ambiguous goals: run **`reference/fog-of-war.md`** before the brief — built-in, not a slash command.
 
 ## If factory is missing
 
@@ -23,9 +23,13 @@ On first significant task in a repo without `factory.md`:
 
 Replace jargon with a short **Task brief** the user can skim in one screen.
 
+### 0. Fog check (when ambiguous)
+
+If the ask is underspecified, taste-heavy, reference-driven, or Class 3+ — run the quadrant walk in **`reference/fog-of-war.md`** first. Deliver the four-quadrant map, then draft the brief from it. Skip for Class 0–1 with a clear ask.
+
 ### 1. Infer from the request (do not interrogate)
 
-From the user message + repo context, draft:
+From the user message + repo context (and the fog map when you ran step 0), draft:
 
 | Field | Agent fills |
 |-------|-------------|
@@ -43,7 +47,7 @@ Show the brief under a heading like **Task brief** (not "Seed" unless the user i
 |-----------|--------|
 | Class 0–1, clear ask | Brief inline → proceed |
 | Class 2+, clear ask | Brief + propose 1–3 scenarios (new or link existing in `.omakaseagent/scenarios/`) → **one** confirm: "Proceed with this brief?" |
-| Ambiguous goal, conflicting constraints, Class 3+ | Ask clarifying questions before implementation |
+| Ambiguous goal, conflicting constraints, Class 3+ | Fog-of-war walk (`reference/fog-of-war.md`) → brief → confirm before implementation |
 | User already gave a full spec | Brief is confirm-only or skip if redundant |
 | User points at `.omakaseagent/backlog/NNN-*.md` | Treat execution plan as charter; brief is plan summary + risk class; proceed to scenarios (Class 2+) then factory loop |
 | Run arrives via `.omakaseagent/loops/<slug>.md` | Standing intent — no per-iteration confirm; execute exactly one iteration per `reference/loops.md`; halt and record instead of asking |

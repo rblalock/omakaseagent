@@ -8,6 +8,10 @@ Like `critique`, it is a smart traffic-cop: it detects the nature of the request
 
 A mediocre plan is worse than no plan. Every Omakase plan must itself pass the Critique Rubric (core + relevant merged extensions) before being delivered.
 
+## Fog of war (before you plan)
+
+For ambiguous, strategic, or taste-heavy requests — run **`reference/fog-of-war.md`** first (full or light mode). The four-quadrant map feeds **Risks, Assumptions & Open Questions** and **Recommended Approach**; do not plan on unmapped fog. Clear, narrow asks may skip straight to planning.
+
 ## Detection & Merge Logic
 
 **Strong signals to merge Engineering extensions** (from `reference/engineering.md`):

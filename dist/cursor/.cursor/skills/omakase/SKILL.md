@@ -91,7 +91,7 @@ Run this check **before** Setup step 4 or loading any `teams/*/lead.md`:
 | `init`                   | Prefer CLI: `omakase init`. Or bootstrap `.omakaseagent/` per `reference/init.md` | `reference/init.md`       |
 | `learn`                  | Prefer CLI: `omakase learn`. Repo factory bootstrap per `reference/learn.md` | `reference/learn.md`      |
 | `critique` (explicit or intent) | If native `omakase-critic` exists → redirect only. Else smart traffic-cop + domain merge + critique reference. | `reference/critique.md` |
-| `plan` (explicit or intent)     | Senior planning. Domain detection + merge relevant standards. Always include explicit Domain Detection & Merge Declaration near top of plan.            | `reference/plan.md`       |
+| `plan` (explicit or intent)     | Senior planning. Fog-of-war walk when ambiguous (`reference/fog-of-war.md`). Domain detection + merge relevant standards. Always include explicit Domain Detection & Merge Declaration near top of plan.            | `reference/plan.md`, `reference/fog-of-war.md`       |
 | `engineer`               | If native `omakase-engineer` exists → redirect only (see precedence). Else load Engineering lead. | `teams/engineering/lead.md` |
 | `taste`                  | Read / query / update persistent taste memory.                           | `reference/taste.md`      |
 | `handoff`                | Produce clean, high-signal handoff notes + protocol.                     | `reference/handoff.md`    |
@@ -116,7 +116,7 @@ Run this check **before** Setup step 4 or loading any `teams/*/lead.md`:
 
 **Smart Default vs Explicit Parity (fallback router — hard contract when natives absent):** When this skill handles engineering work because native `omakase-engineer` is **not** installed, smart-default and explicit `/omakase engineer` **must** follow the same factory contract:
 
-- Load `teams/engineering/lead.md`, `reference/task-intake.md`, and `reference/factory-orchestration.md` (plus `reference/backlog-audit.md` / `reference/execution-plan.md` when the goal is audit or backlog work, and `reference/loops.md` when a standing loop charter is in play)
+- Load `teams/engineering/lead.md`, `reference/task-intake.md`, `reference/fog-of-war.md`, and `reference/factory-orchestration.md` (plus `reference/backlog-audit.md` / `reference/execution-plan.md` when the goal is audit or backlog work, and `reference/loops.md` when a standing loop charter is in play)
 - Class **2+:** co-create task brief + scenarios (one confirm) before deep implementation
 - Class **2+:** close with gate file under `.omakaseagent/gates/` (or committed `examples/*/gates/` in this repo) — not chat-only "done"
 - Run mechanical commands from `factory.md` when present; cite memory in output

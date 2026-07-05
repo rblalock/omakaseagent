@@ -22,13 +22,17 @@
         "\\*\\*Review:\\*\\* PENDING",
         "@omakase-critic",
         "Pending does not block the belt",
-        "decisions\\.md` entry the human approves"
+        "decisions\\.md` entry the human approves",
+        "interview first",
+        "NEVER.*omakase learn"
       ]
     },
     {
       "path": "skill/teams/engineering/lead.md",
       "mustMatch": [
         "reference/loops\\.md",
+        "fog setup interview first",
+        "do not.*omakase learn",
         "one queue item per iteration",
         "UNAPPROVED",
         "never approve it yourself",
@@ -47,7 +51,7 @@
     },
     {
       "path": "dist/cursor/.cursor/agents/omakase-engineer.md",
-      "mustMatch": ["reference/loops\\.md"]
+      "mustMatch": ["reference/loops\\.md", "reference/fog-of-war\\.md"]
     }
   ],
   "requiredEvidence": ["one gate file per iteration", "ledger row", "halt on Stop condition"],

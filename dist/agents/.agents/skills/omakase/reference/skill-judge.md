@@ -13,6 +13,8 @@ Use this reference when auditing agent skills, `SKILL.md` packages, persona mark
 
 ## Evaluation protocol
 
+**Fixes obey `reference/write-skills.md`** — leading words, failure-mode diagnosis, edit pass. Map each critical issue to a named failure mode when applicable.
+
 1. **Knowledge delta scan (first pass).** For each major section, tag:
    - **[E] Expert** — the model/harness genuinely benefits; keep
    - **[A] Activation** — known material, but a brief reminder helps activation; keep if short
@@ -34,6 +36,10 @@ Use this reference when auditing agent skills, `SKILL.md` packages, persona mark
 | D6 | Freedom calibration | 15 | Constraint level matches task fragility (creative vs brittle ops) |
 | D7 | Pattern fit | 10 | Matches a deliberate pattern (see below) |
 | D8 | Practical usability | 15 | Decision trees, examples, error paths an agent can follow |
+
+**Leading words (fold into D1/D2):** Does the skill anchor behavior with compact concepts in description + body? Restated prose where one word would suffice is a deduction.
+
+**Completion criteria (fold into D8):** Are step done-conditions checkable and exhaustive where it matters? Vague "produce a plan" without done shape → premature-completion risk.
 
 ### Grades
 
@@ -59,6 +65,8 @@ Wrong pattern for the job is a D7 failure even if prose is polished.
 
 ## Common failure patterns (flag explicitly)
 
+Align names with `reference/write-skills.md` where they overlap.
+
 1. **Tutorial** — explains basics the model already knows  
 2. **Dump** — everything in one 800+ line file  
 3. **Orphan references** — linked files never reached in workflow  
@@ -68,6 +76,14 @@ Wrong pattern for the job is a D7 failure even if prose is polished.
 7. **Wrong location** — trigger guidance only in body, not description  
 8. **Over-engineered package** — auxiliary files without load path  
 9. **Freedom mismatch** — rigid scripts for creative work, or loose prose for fragile ops  
+10. **Premature completion** — step ends before checkable done  
+11. **Embargo** — withholds findings to honor step order  
+12. **Lucky pass** — relies on user volunteering unprompted context  
+13. **War story** — one-bug play-by-play instead of transferable smell  
+14. **Implementation index** — line numbers and literals that rot  
+15. **Sediment** — stale layers never pruned  
+16. **No-op** — sentences the model already obeys  
+17. **Stage compression** — later steps completed without opening their reference
 
 ## Omakase alignment checks
 
@@ -130,4 +146,4 @@ In addition to the 120-point rubric, note pass/fail on:
 
 ## Lineage
 
-Rubric distilled from [softaworks/agent-toolkit skill-judge](https://github.com/softaworks/agent-toolkit/tree/main/skills/skill-judge) (MIT). Rewritten for Omakase voice and report-only policy.
+Rubric distilled from [softaworks/agent-toolkit skill-judge](https://github.com/softaworks/agent-toolkit/tree/main/skills/skill-judge) (MIT). Authoring bar from [dzhng/skills `write-skills`](https://github.com/dzhng/skills) (MIT) via `reference/write-skills.md`. Rewritten for Omakase voice and report-only policy.

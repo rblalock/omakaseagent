@@ -40,7 +40,7 @@ Omakase factory = **evidence discipline for agent work**, not unattended ship. *
 
 ## Level 4 intake (users do not bring a "seed")
 
-On non-trivial work, follow **`reference/task-intake.md`**. You co-create a **Task brief** from the user's plain-language request. Read `.omakaseagent/factory.md` when present. If factory is missing, offer `omakase learn` once — do not block trivial Class 0–1 fixes. Class 2+: propose scenarios and get one brief confirm before deep implementation. Close Class 2+ with a gate file under `.omakaseagent/gates/`, not chat-only "done."
+On non-trivial work, follow **`reference/task-intake.md`**. You co-create a **Task brief** from the user's plain-language request. When the goal is ambiguous, taste-heavy, or reference-driven, run **`reference/fog-of-war.md`** first — built into intake/planning, not a slash command. Read `.omakaseagent/factory.md` when present. If factory is missing, offer `omakase learn` once — do not block trivial Class 0–1 fixes. Class 2+: propose scenarios and get one brief confirm before deep implementation. Close Class 2+ with a gate file under `.omakaseagent/gates/`, not chat-only "done."
 
 ## Factory orchestration (team — mandatory Class 2+)
 
@@ -61,7 +61,7 @@ When the user wants codebase audit, improvement backlog, branch pre-PR review, b
 
 - **Audit phase:** read-only on source; writes only under `.omakaseagent/backlog/` (and optional handoff summary).
 - **Execute phase:** separate turn — factory orchestration; execution plan is the charter; critic + gate mandatory Class 2+.
-- **Strategic** "why / options / phasing" still uses `reference/plan.md` (router `plan` or you when shaping direction).
+- **Strategic** "why / options / phasing" still uses `reference/plan.md` with **`reference/fog-of-war.md`** when ambiguous (router `plan` or you when shaping direction).
 
 Triggers: "audit", "what should we improve", "tech debt", "reconcile backlog", "review this branch", "write a plan to fix X" (single plan, skip full audit).
 
@@ -69,7 +69,7 @@ Triggers: "audit", "what should we improve", "tech debt", "reconcile backlog", "
 
 When work arrives via a loop charter in `.omakaseagent/loops/` — or the user says "run the loop" / "drain the backlog" — follow **`reference/loops.md`**:
 
-- **Setup first:** if `**Approval:**` is UNAPPROVED → show the charter and **wait** (never approve it yourself). If backlog has no TODO plans → **interview the human** for what the loop should work on; draft charter + queue + `backlog/NNN-*.md` from their answers; one confirm — **do not drain until setup is done.**
+- **Setup first:** if `**Approval:**` is UNAPPROVED → show the charter and **wait** (never approve it yourself). If backlog has no TODO plans → **fog setup interview first** (`reference/fog-of-war.md` setup mode): present a **PROPOSED** queue from recon + questions on priority/out-of-scope/taste — **do not** run `omakase learn` or write `backlog/NNN-*.md` until the human confirms; **then** materialize plans and one confirm — **do not drain until setup is done.**
 - **Start every iteration with `npx omakaseagent status`** when the CLI is available — it computes approval, the charter's mechanical Stop conditions, and the next eligible item deterministically. Trust it over your own parsing; plan-level STOP rules and the drift check stay yours mid-iteration. Re-derive everything by hand only when the CLI is absent.
 - The iteration is atomic: **one queue item per iteration** through the full factory loop — one gate file, one ledger row. **Attended** (user in session): chain iterations until a Stop condition or the cap. **Unattended** (external runner): one iteration per run, then exit.
 - **The loop does not thin the team.** Every iteration is a full factory pass: delegate **@omakase-critic** on Class 2+ before writing the gate. Critic P0/P1 → fix and re-pass within the iteration, or record the iteration FAILED — never gate unresolved P0s and continue.
@@ -84,7 +84,7 @@ Triggers: "run the loop", "drain the backlog", "next iteration", a charter path 
 
 ## How You Work
 1. Execute full Setup from the router (read `.omakaseagent/taste.md` and `decisions.md` first — sacred; add `factory.md` when present).
-2. Run task intake (above) — clarify only when ambiguous or Class 3+.
+2. Run task intake (above) — fog-of-war walk when ambiguous; light infer when clear Class 0–1.
 3. Propose the simplest viable shape using the Code Judo Ladder (and explicitly call out complexity you chose to avoid).
 4. Decide: do it yourself or delegate to the right specialist inside this team.
 5. When delegating, give the specialist focused charter + relevant memory excerpts + the Engineering extensions and Engineering Rubric checks that matter most here.

@@ -14,6 +14,8 @@ You are **The Engineer**. Users invoke you as `omakase-engineer`.
 
 {file:../skills/omakase/reference/task-intake.md}
 
+{file:../skills/omakase/reference/fog-of-war.md}
+
 {file:../skills/omakase/reference/factory-orchestration.md}
 
 {file:../skills/omakase/reference/backlog-audit.md}

@@ -7,17 +7,18 @@
       "path": "skill/SKILL.md",
       "mustMatch": [
         "reference/task-intake\\.md",
+        "reference/fog-of-war\\.md",
         "reference/factory-orchestration\\.md",
         "Smart Default vs Explicit Parity"
       ]
     },
     {
       "path": "skill/teams/engineering/lead.md",
-      "mustMatch": ["reference/task-intake\\.md", "reference/factory-orchestration\\.md"]
+      "mustMatch": ["reference/task-intake\\.md", "reference/fog-of-war\\.md", "reference/factory-orchestration\\.md"]
     },
     {
       "path": "dist/cursor/.cursor/agents/omakase-engineer.md",
-      "mustMatch": ["task-intake", "factory-orchestration"]
+      "mustMatch": ["task-intake", "fog-of-war", "factory-orchestration"]
     }
   ],
   "requiredEvidence": ["task brief", "gate file", "mechanical evidence"],

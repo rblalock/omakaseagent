@@ -9,7 +9,7 @@
 - "Reconcile the backlog" / "refresh stale plans"
 - "Write an execution plan for fixing X" (skip audit — recon + single plan)
 
-**Read with:** `reference/dark-factory.md`, `.omakaseagent/factory.md`, `taste.md`, `decisions.md`, `reference/execution-plan.md`.
+**Read with:** `reference/dark-factory.md`, `.omakaseagent/factory.md`, `taste.md`, `decisions.md`, `reference/execution-plan.md`, `reference/fog-of-war.md`.
 
 ---
 
@@ -38,6 +38,10 @@
 ---
 
 ## Workflow
+
+### Phase 0 — Fog (when scope is open-ended)
+
+When the user asks "what should we improve?" without a narrow target — run **`reference/fog-of-war.md`** light mode after recon: name known unknowns (priority, risk appetite, out-of-scope) and unknown knowns (taste from `taste.md`, rejected directions from `decisions.md`) before the findings table. Skip when the user names a specific fix ("write a plan for X").
 
 ### Phase 1 — Recon (always)
 

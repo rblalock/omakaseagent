@@ -66,6 +66,7 @@ Repo-specific extension for **${pkg.name}** skill source.
 
 ## Mandate
 - Changes under \`skill/\` follow factory Class 2+ loop (brief, scenarios, gate).
+- Authoring bar: \`reference/write-skills.md\`; audits: \`reference/skill-judge.md\` via @omakase-critic → skill-judge.
 - Run \`npm run build\` after persona edits; \`npm run verify:native-agents\` + \`npm run verify:scenario-evals\`.
 - Delegate structural review to @omakase-critic when risk is high.
 
