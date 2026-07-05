@@ -84,6 +84,36 @@ Also on the skills ecosystem: `npx skills add rblalock/omakaseagent` ([skills.sh
 
 Use `npx omakaseagent skills install --no-native-agents` for skill-only. Verify artifacts: `npm run verify:native-agents`.
 
+## Update an existing install
+
+Omakase ships skill trees and native agent prompts from the npm package. After a new release (see [npm](https://www.npmjs.com/package/omakaseagent)), refresh each project that should pick up the change.
+
+**Per project** (recommended — skill + native agents for all harnesses this repo uses):
+
+```bash
+npx omakaseagent@latest init
+```
+
+**One harness only** (e.g. you only use Grok in this repo):
+
+```bash
+npx omakaseagent@latest skills install grok   # cursor | claude | agents | codex
+```
+
+**Global install** (user-level skill/agents dir):
+
+```bash
+npx omakaseagent@latest skills install grok --global
+```
+
+Then **start a new harness session** (reload Cursor, new `grok` run, etc.) so updated prompts load.
+
+`init` is safe to re-run: it refreshes `.grok/`, `.claude/`, `.agents/`, and related bundles from `dist/`. It does **not** overwrite existing `.omakaseagent/taste.md` or `decisions.md`. Factory layout (`factory.md`, scenarios, loops) is unchanged unless you run `learn` again.
+
+If this repo lists `omakaseagent` as a dependency, bump or `npm update omakaseagent` first, then run `init` or `skills install` from the project root.
+
+Check the installed CLI version: `npx omakaseagent --version` (or `npx omakaseagent` with no args for help).
+
 ## Developing this repo
 
 Source: `skill/`. Shipped bundles: `dist/` (committed — do not edit by hand).
