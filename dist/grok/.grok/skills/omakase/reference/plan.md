@@ -72,16 +72,4 @@ The output of `plan` is frequently handed to `engineer` or other agents. Poor pl
 
 ## Relationship to Handoff
 
-When the plan is substantial, consider also producing a crisp handoff document (see `reference/handoff.md`) for the transition from planning to execution.
-
-## Strategic plan vs execution plan
-
-| | Strategic (`reference/plan.md`) | Execution (`.omakaseagent/backlog/`) |
-|---|--------------------------------|--------------------------------------|
-| **Purpose** | Why, options, trade-offs, phasing | How — steps, excerpts, verify gates |
-| **Trigger** | `/omakase-router plan`, shaping direction | Backlog audit selection, "fix X" spec |
-| **Audience** | Human + Engineer deciding shape | `omakase-implementation-lead` with zero session context |
-| **Template** | Required elements in this file | `reference/execution-plan.md` |
-| **Close** | Handoff to Engineer | Factory loop: critic + gate |
-
-A strategic plan may recommend backlog items; Engineer writes execution plans when it's time to spec concrete file-level work (`reference/backlog-audit.md`).
+When the plan is ready for implementation, hand off cleanly to **@omakase-engineer** (or `reference/handoff.md`). Concrete file-level work happens in the engineering turn.

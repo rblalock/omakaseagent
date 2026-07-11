@@ -4,7 +4,7 @@ Protocols for **@omakase-archivist**. Not user-facing skills. Distilled from cur
 
 **Router:** Use the native Archivist for these. Router `taste` is for reading/updating memory on demand — not weekly recaps.
 
-**Phase G:** Full repo `omakase learn` (CLI + project agents) is separate; this doc covers chat/git evidence only.
+This doc covers chat/git evidence and drift audit only.
 
 ---
 
@@ -143,7 +143,7 @@ The lead may still run git or chat workflows alone when the ask is a recap or a 
 
 | Trigger | Action |
 |---------|--------|
-| After merging Class 2 `skill/` or native generator changes | `npm run verify:drift` (CI runs this on main/PR) |
+| After merging `skill/` or native generator changes | `npm run verify:drift` (CI runs this on main/PR) |
 | Weekly maintenance or “does dist match skill?” | Same + `npm run build` if drift found |
 | Before adding a new specialist | Check overlap per `reference/team-architecture.md` |
 

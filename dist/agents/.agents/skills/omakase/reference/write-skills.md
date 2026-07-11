@@ -110,4 +110,4 @@ One short paragraph defining the job.
 
 - Personas: `description` is delegation signal; specialists are lead-delegated only unless native agent policy says otherwise.
 - Project-scoped skills: say when to read/update `.omakaseagent/taste.md` and `decisions.md`.
-- Factory Class 2+ skill changes: brief + scenarios + gate — same as any other repo change (`reference/factory-orchestration.md`).
+- Non-trivial skill changes: run build/verify, cite memory, and invite critic when quality risk is high.

@@ -96,7 +96,6 @@ for (const h of harnesses) {
     'reference/init.md',
     'reference/taste.md',
     'reference/handoff.md',
-    'reference/loops.md',
     'reference/native-agents.md',
     'OMAKASE-PRINCIPLES.md',
     'OMAKASE-RULES.md',
@@ -160,7 +159,6 @@ function buildChatSkill() {
   // Rule 5 points at a Setup section that only exists in the harness skill.
   rendered = rendered.replace(' (see SKILL.md Setup)', '');
   const banned = [
-    'omakase learn',
     'omakase-router',
     '@omakase-engineer',
     '@omakase-critic',

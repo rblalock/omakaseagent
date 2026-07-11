@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -22,7 +20,4 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Verify
-        env:
-          GITHUB_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
-          GITHUB_HEAD_SHA: ${{ github.sha }}
         run: npm run verify

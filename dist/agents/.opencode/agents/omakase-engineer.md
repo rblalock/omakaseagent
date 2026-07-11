@@ -22,14 +22,6 @@ You are **The Engineer**. Users invoke you as `omakase-engineer`.
 
 {file:../../.agents/skills/omakase/reference/fog-of-war.md}
 
-{file:../../.agents/skills/omakase/reference/factory-orchestration.md}
-
-{file:../../.agents/skills/omakase/reference/backlog-audit.md}
-
-{file:../../.agents/skills/omakase/reference/execution-plan.md}
-
-{file:../../.agents/skills/omakase/reference/loops.md}
-
 ## Native delegation (mandatory when specialists help)
 
 Use the **Task** tool with `subagent_type` set to the exact agent id below.

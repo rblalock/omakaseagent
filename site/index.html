@@ -170,7 +170,7 @@
         a critique rubric, and project memory. Trust the chef: state the goal.
         Nothing mediocre reaches the table.</p>
       <div class="hero-cta">
-        <button class="cmd-chip" type="button" data-copy="Run `npx omakaseagent init` in this repo. Then read the AGENTS.md and Omakase skill it installs, and adopt the twelve rules and the critique gate for all work here from now on. Next, run `npx omakaseagent learn` and fill in .omakaseagent/factory.md with this repo's real build, test, and verify commands. When you're done, tell me what standard you're now working under and how I should hand you tasks.">
+        <button class="cmd-chip" type="button" data-copy="Run `npx omakaseagent init` in this repo. Then read the AGENTS.md and Omakase skill it installs, and adopt the twelve rules and the critique gate for all work here from now on. When you're done, tell me what standard you're now working under and how I should hand you tasks.">
           Copy Prompt
         </button>
         <a class="btn" href="https://github.com/rblalock/omakaseagent">View on GitHub</a>
@@ -561,113 +561,12 @@
     </div>
   </section>
 
-  <!-- 六 the conveyor -->
-  <section class="course course-kaiten" id="loop">
-    <header class="course-head">
-      <div class="course-title">
-        <span class="course-num" aria-hidden="true">六</span>
-        <h2>The Conveyor</h2>
-      </div>
-    </header>
-    <div class="course-body">
-      <figure class="kaiten-belt reveal">
-        <svg viewBox="0 50 1200 150" role="img" aria-label="Conveyor belt carrying sushi plates and a stamped gate report past the counter">
-          <defs>
-            <g id="kz-plate">
-              <ellipse cx="60" cy="120" rx="54" ry="14" fill="#f3ead3" stroke="#2a221b" stroke-width="5"/>
-            </g>
-            <g id="kz-tuna">
-              <use href="#kz-plate"/>
-              <ellipse cx="60" cy="104" rx="30" ry="12" fill="#f3ead3" stroke="#2a221b" stroke-width="4"/>
-              <path d="M30 98 Q60 72 90 98 Q60 112 30 98 Z" fill="#d93a1f" stroke="#2a221b" stroke-width="4"/>
-            </g>
-            <g id="kz-maki">
-              <use href="#kz-plate"/>
-              <circle cx="60" cy="92" r="24" fill="#2a221b"/>
-              <circle cx="60" cy="92" r="16" fill="#f3ead3"/>
-              <circle cx="60" cy="92" r="7" fill="#d93a1f" stroke="#2a221b" stroke-width="3"/>
-            </g>
-            <g id="kz-gate">
-              <use href="#kz-plate"/>
-              <g transform="rotate(-5 60 88)">
-                <rect x="32" y="62" width="56" height="48" fill="#f3ead3" stroke="#2a221b" stroke-width="4"/>
-                <g stroke="#2a221b" stroke-width="3" stroke-linecap="round">
-                  <path d="M41 76 h30"/><path d="M41 87 h22"/>
-                </g>
-                <circle cx="74" cy="99" r="8" fill="#d93a1f"/>
-              </g>
-            </g>
-            <g id="kz-saka">
-              <use href="#kz-plate"/>
-              <ellipse cx="60" cy="104" rx="30" ry="12" fill="#f3ead3" stroke="#2a221b" stroke-width="4"/>
-              <path d="M32 100 Q58 70 90 94 L86 102 Q58 112 32 100 Z" fill="#e393bd" stroke="#2a221b" stroke-width="4"/>
-            </g>
-          </defs>
 
-          <rect x="-8" y="132" width="1216" height="42" fill="#2a221b"/>
-          <g class="belt-train">
-            <g stroke="#f3ead3" stroke-width="5" opacity="0.2">
-              <path d="M20 140 v26"/><path d="M140 140 v26"/><path d="M260 140 v26"/><path d="M380 140 v26"/>
-              <path d="M500 140 v26"/><path d="M620 140 v26"/><path d="M740 140 v26"/><path d="M860 140 v26"/>
-              <path d="M980 140 v26"/><path d="M1100 140 v26"/><path d="M1220 140 v26"/><path d="M1340 140 v26"/>
-              <path d="M1460 140 v26"/><path d="M1580 140 v26"/><path d="M1700 140 v26"/><path d="M1820 140 v26"/>
-              <path d="M1940 140 v26"/><path d="M2060 140 v26"/><path d="M2180 140 v26"/><path d="M2300 140 v26"/>
-              <path d="M2420 140 v26"/><path d="M2540 140 v26"/><path d="M2660 140 v26"/><path d="M2780 140 v26"/>
-            </g>
-            <use href="#kz-tuna" x="0"/>
-            <use href="#kz-maki" x="240"/>
-            <use href="#kz-gate" x="480"/>
-            <use href="#kz-saka" x="720"/>
-            <use href="#kz-tuna" x="960"/>
-            <use href="#kz-maki" x="1200"/>
-            <use href="#kz-tuna" x="1440"/>
-            <use href="#kz-maki" x="1680"/>
-            <use href="#kz-gate" x="1920"/>
-            <use href="#kz-saka" x="2160"/>
-            <use href="#kz-tuna" x="2400"/>
-            <use href="#kz-maki" x="2640"/>
-          </g>
-          <g fill="#2a221b">
-            <rect x="150" y="174" width="18" height="18"/>
-            <rect x="591" y="174" width="18" height="18"/>
-            <rect x="1032" y="174" width="18" height="18"/>
-          </g>
-        </svg>
-      </figure>
-
-      <p class="kaiten-lede">A loop is the kitchen serving iteration after iteration without
-         you managing each one. You approve a <strong>standing order</strong> once: what to
-         work on, what never to touch, when to stop. The kitchen works one iteration at a
-         time: each item arrives with its proof, and the stack of plates is your record.
-         <em>Manage the outcome, not the kitchen crew.</em></p>
-
-      <div class="kaiten-grid">
-        <div class="kt-col reveal">
-          <h3>The standing order <span lang="ja">注文</span></h3>
-          <p>A one-page charter: what is in scope, how risky it may get, when to stop.
-             Nothing runs unattended until you have signed it.</p>
-        </div>
-        <div class="kt-col reveal">
-          <h3>One plate at a time <span lang="ja">一皿</span></h3>
-          <p>Each pass picks one item, completes it, proves it, and logs it. The
-             critic inspects every plate before it reaches the belt. When the kitchen
-             would have to guess, it stops and tells you why.</p>
-        </div>
-        <div class="kt-col reveal">
-          <h3>Count the plates <span lang="ja">勘定</span></h3>
-          <p>Review the evidence in a stack, on your time. A clean track record can
-             earn longer runs; a rejected plate reins them in. Autonomy is earned the
-             more it's used.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 七 how to order -->
+  <!-- 六 how to order -->
   <section class="course" id="order">
     <header class="course-head">
       <div class="course-title">
-        <span class="course-num" aria-hidden="true">七</span>
+        <span class="course-num" aria-hidden="true">六</span>
         <h2>How to Order</h2>
       </div>
     </header>
@@ -681,70 +580,37 @@ AGENTS.md and Omakase skill it installs, and adopt the
 twelve rules and the critique gate for all work here from
 now on.
 
-Next, run <span class="at">npx omakaseagent learn</span> and fill in
-.omakaseagent/factory.md with this repo's real build, test,
-and verify commands.
-
 When you're done, tell me what standard you're now working
 under and how I should hand you tasks.</code></pre>
             <div class="ticket-foot">
-              <button class="btn" type="button" data-copy="Run `npx omakaseagent init` in this repo. Then read the AGENTS.md and Omakase skill it installs, and adopt the twelve rules and the critique gate for all work here from now on. Next, run `npx omakaseagent learn` and fill in .omakaseagent/factory.md with this repo's real build, test, and verify commands. When you're done, tell me what standard you're now working under and how I should hand you tasks.">
+              <button class="btn" type="button" data-copy="Run `npx omakaseagent init` in this repo. Then read the AGENTS.md and Omakase skill it installs, and adopt the twelve rules and the critique gate for all work here from now on. When you're done, tell me what standard you're now working under and how I should hand you tasks.">
                 Copy Prompt
               </button>
             </div>
           </div>
 
-          <div class="ticket ticket-order reveal">
-            <div class="ticket-head"><span>LOOP SETUP</span><span lang="ja">準備</span></div>
-            <pre class="ticket-prompt"><code>Run <span class="at">npx omakaseagent init</span> and
-<span class="at">npx omakaseagent learn</span> if this repo has no factory yet.
-
-Read <span class="at">.omakaseagent/loops/backlog-drain.md</span> and
-<span class="at">.omakaseagent/factory.md</span>. Do not approve the
-charter yourself.
-
-If the backlog is empty, interview me: what should this loop work on,
-what is out of scope, and what order makes sense. Draft the charter,
-queue, and <span class="at">backlog/NNN-*.md</span> from my answers.
-Ask me to confirm once. I approve the charter when the standing order
-is right. Then run the loop from the charter.</code></pre>
-            <div class="ticket-foot">
-              <button class="btn" type="button" data-copy="Run `npx omakaseagent init` and `npx omakaseagent learn` if this repo has no factory yet. Read `.omakaseagent/loops/backlog-drain.md` and `.omakaseagent/factory.md`. Do not approve the charter yourself. If the backlog is empty, interview me: what should this loop work on, what is out of scope, and what order makes sense. Draft the charter, queue, and `backlog/NNN-*.md` from my answers. Ask me to confirm once. I approve the charter when the standing order is right. Then run the loop from the charter.">
-                Copy loop setup
-              </button>
-            </div>
-          </div>
         </div>
         <div class="order-steps">
           <div class="order-step">
             <h3><span class="step-no">1</span> Copy Prompt</h3>
             <p>One button and the whole kitchen arrives. The ticket tells your agent
-               what to set up, what to read, and how to learn the way your repo
-               likes things done.</p>
+               what to set up, what to read, and the standard to work under from now on.</p>
           </div>
           <div class="order-step">
             <h3><span class="step-no">2</span> Hand it to your agent</h3>
             <p>Paste it into Claude Code, Cursor, or wherever your agent lives. It
-               adopts the rules, remembers your taste, and writes the house playbook:
-               what to check and what proof to show before anything is served.</p>
+               adopts the rules, remembers your taste, and holds the critique bar
+               before anything significant is served.</p>
           </div>
           <div class="order-step">
             <h3><span class="step-no">3</span> Talk to a craftsman</h3>
             <p>State the goal in plain words. A lead craftsman gathers context, sets
                the shokunin to work, passes the critique gate, and serves the result.</p>
           </div>
-          <div class="order-step">
-            <h3><span class="step-no">4</span> Set up a standing loop</h3>
-            <p>For work that keeps coming back, use the omakase loop.
-               State what should be true. The chef proposes the standing order and
-               queue; you approve it once. Then the kitchen runs until it stops.</p>
-          </div>
           <div class="terminal-note">
             <span class="tn-label">Prefer the terminal?</span>
             <div class="tn-cmds">
               <code>npx omakaseagent init</code>
-              <code>npx omakaseagent learn</code>
-              <code>npx omakaseagent status</code>
               <code>npx skills add rblalock/omakaseagent</code>
             </div>
           </div>
@@ -825,7 +691,7 @@ is right. Then run the loop from the charter.</code></pre>
     <div class="footer-cta">
       <h2>The kitchen is open.</h2>
       <div class="hero-cta">
-        <button class="cmd-chip" type="button" data-copy="Run `npx omakaseagent init` in this repo. Then read the AGENTS.md and Omakase skill it installs, and adopt the twelve rules and the critique gate for all work here from now on. Next, run `npx omakaseagent learn` and fill in .omakaseagent/factory.md with this repo's real build, test, and verify commands. When you're done, tell me what standard you're now working under and how I should hand you tasks.">
+        <button class="cmd-chip" type="button" data-copy="Run `npx omakaseagent init` in this repo. Then read the AGENTS.md and Omakase skill it installs, and adopt the twelve rules and the critique gate for all work here from now on. When you're done, tell me what standard you're now working under and how I should hand you tasks.">
           Copy Prompt
         </button>
         <a class="btn" href="https://github.com/rblalock/omakaseagent">View on GitHub</a>

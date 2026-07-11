@@ -27,13 +27,11 @@ Paste this into your agent (Claude Code, Cursor, wherever it lives) — the setu
 ```text
 Run `npx omakaseagent init` in this repo. Then read the AGENTS.md and Omakase
 skill it installs, and adopt the twelve rules and the critique gate for all
-work here from now on. Next, run `npx omakaseagent learn` and fill in
-.omakaseagent/factory.md with this repo's real build, test, and verify
-commands. When you're done, tell me what standard you're now working under
-and how I should hand you tasks.
+work here from now on. When you're done, tell me what standard you're now
+working under and how I should hand you tasks.
 ```
 
-Prefer the terminal? `npx omakaseagent init` then `npx omakaseagent learn` — but the agent should be the one reading and adopting what gets installed.
+Prefer the terminal? `npx omakaseagent init` — but the agent should be the one reading and adopting what gets installed.
 
 Reload your harness, then talk to a **lead** (not a menu of skills):
 
@@ -108,7 +106,7 @@ npx omakaseagent@latest skills install grok --global
 
 Then **start a new harness session** (reload Cursor, new `grok` run, etc.) so updated prompts load.
 
-`init` is safe to re-run: it refreshes `.grok/`, `.claude/`, `.agents/`, and related bundles from `dist/`. It does **not** overwrite existing `.omakaseagent/taste.md` or `decisions.md`. Factory layout (`factory.md`, scenarios, loops) is unchanged unless you run `learn` again.
+`init` is safe to re-run: it refreshes `.grok/`, `.claude/`, `.agents/`, and related bundles from `dist/`. It does **not** overwrite existing `.omakaseagent/taste.md` or `decisions.md`.
 
 If this repo lists `omakaseagent` as a dependency, bump or `npm update omakaseagent` first, then run `init` or `skills install` from the project root.
 
@@ -123,7 +121,6 @@ npm link              # local CLI
 npm run build
 npm run verify:native-agents
 npx omakaseagent init      # dogfood in this clone
-npx omakaseagent learn     # factory layout for this repo
 ```
 
 ## License

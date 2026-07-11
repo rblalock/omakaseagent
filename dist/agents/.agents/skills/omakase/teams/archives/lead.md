@@ -38,7 +38,6 @@ See **`reference/archivist-workflows.md`** for full protocols. Quick map:
 | Weekly recap, “what did I ship”, date-range status | Git recap — themed summary + classification; **not** a raw log |
 | Mine chats / learn preferences / encode workflow | Chat preferences — diffs for memory; **confirm before apply** |
 | Patterns across memory + git + chats | Delegate **Memory Synthesizer** with charter + that reference |
-| `omakase learn` / repo factory setup | `reference/learn.md` + `reference/dark-factory.md` — CLI preferred |
 | Drift audit, “does dist match skill?” | `reference/archivist-workflows.md` § Drift audit — `npm run verify:drift` |
 
 Defaults: **7-day** window (git may use up to 10 for “weekly”), **`main`**, current `git config user.email` unless user asks for team scope.

@@ -35,11 +35,4 @@ Save substantial handoffs to `.omakaseagent/handoffs/` with a clear slug (date +
 
 The recipient should be able to pick up the work with minimal back-and-forth.
 
-## Execution plans vs handoffs
-
-| Artifact | When |
-|----------|------|
-| **Handoff** (`handoffs/`) | Session continuity, context between agents mid-task |
-| **Execution plan** (`backlog/`) | Scoped implementation spec — steps, STOP, verify gates (`reference/execution-plan.md`) |
-
-After a backlog audit, a short findings summary may live in `handoffs/`; durable work specs go to `backlog/`. Implementation always follows factory orchestration — an execution plan is not a substitute for critic + gate on Class 2+.
+Handoffs are for session continuity between agents or humans mid-task. Prefer a tight charter over a process artifact.

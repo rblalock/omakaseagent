@@ -170,10 +170,6 @@ function buildAgentBody(persona, harness, core) {
   if (persona.meta.name === 'engineer') {
     lines.push('', fileInclude(skillBase, 'reference/task-intake.md'));
     lines.push('', fileInclude(skillBase, 'reference/fog-of-war.md'));
-    lines.push('', fileInclude(skillBase, 'reference/factory-orchestration.md'));
-    lines.push('', fileInclude(skillBase, 'reference/backlog-audit.md'));
-    lines.push('', fileInclude(skillBase, 'reference/execution-plan.md'));
-    lines.push('', fileInclude(skillBase, 'reference/loops.md'));
   }
   if (persona.isLead) lines.push(delegationSection(persona));
   return lines.join('\n');

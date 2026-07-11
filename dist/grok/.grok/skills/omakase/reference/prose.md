@@ -1,6 +1,6 @@
 # Prose — Anti-Slop for Writing
 
-Use this reference whenever an artifact is primarily **prose**: emails, docs, strategy briefs, GTM copy, READMEs, gate reports, handoffs, memory entries, agent responses to humans, and user-facing strings.
+Use this reference whenever an artifact is primarily **prose**: emails, docs, strategy briefs, GTM copy, READMEs, handoffs, memory entries, agent responses to humans, and user-facing strings.
 
 **Attribution:** Phrase and structure catalogs adapted from [stop-slop](https://github.com/hardikpandya/stop-slop) (MIT, Hardik Pandya). Omakase applies them under the Critique Rubric with project taste overrides — we did **not** adopt absolute bans on all adverbs or all em dashes.
 

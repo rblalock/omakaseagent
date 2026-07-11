@@ -972,69 +972,6 @@ code, pre { font-family: var(--mono); font-variant-ligatures: none; }
   color: var(--ink-soft);
 }
 
-/* ---------- the conveyor (kaiten) ---------- */
-
-.kaiten-belt {
-  margin-bottom: var(--s-8);
-  border: var(--border);
-  background: var(--paper-dim);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-.kaiten-belt svg { display: block; width: 100%; height: auto; }
-
-.kaiten-lede { max-width: 62ch; color: var(--ink-soft); }
-.kaiten-lede strong { color: var(--ink); }
-.kaiten-lede em { font-style: normal; font-weight: 700; color: var(--vermillion-deep); }
-
-.kaiten-grid {
-  margin-top: var(--s-8);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--s-6);
-}
-
-.kt-col {
-  border: var(--border);
-  background: var(--paper);
-  box-shadow: 6px 6px 0 var(--ink);
-}
-
-.kt-col h3 {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: var(--s-3);
-  font-family: var(--display);
-  font-size: 1rem;
-  letter-spacing: 0.08em;
-  padding: var(--s-3) var(--s-4);
-  border-bottom: var(--border);
-  background: var(--blossom-light);
-}
-
-.kt-col h3 span[lang="ja"] {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.25em;
-  color: var(--vermillion-deep);
-}
-
-.kt-col p {
-  padding: var(--s-4);
-  font-size: 0.92rem;
-  color: var(--ink-soft);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .kaiten-belt .belt-train { animation: belt-roll 30s linear infinite; }
-}
-
-@keyframes belt-roll {
-  to { transform: translateX(-1440px); }
-}
 
 /* ---------- footer ---------- */
 

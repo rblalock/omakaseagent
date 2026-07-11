@@ -8,8 +8,8 @@ Use this reference when auditing agent skills, `SKILL.md` packages, persona mark
 
 - "Evaluate this skill", "audit SKILL.md", "score this persona"
 - Before siphoning an external skill into `skill/teams/` or `skill/reference/`
-- After generating or changing project agents (`omakase learn` → `.omakaseagent/project-agents/`)
-- Dark-factory Phase 4: mechanical contracts in `evals/*.eval.json` (`npm run verify:scenario-evals`); live with/without-skill runs per `reference/team-architecture.md` trigger table
+- After generating or changing persona markdown under `skill/teams/`
+- Mechanical contracts in `evals/*.eval.json` (`npm run verify:scenario-evals`); live with/without-skill runs per `reference/team-architecture.md` trigger table
 
 ## Evaluation protocol
 

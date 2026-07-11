@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Dark-factory Phase 4: mechanical scenario evals against skill/native contracts.
+ * Mechanical scenario evals against skill/native contracts.
  * See evals/*.eval.json and evals/README.md
  */
 

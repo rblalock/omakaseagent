@@ -1,6 +1,6 @@
 {
   "name": "omakaseagent",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "Omakase — the chef's standard. Portable senior-craftsmanship skill (markdown-first) + npx omakaseagent skills install for Cursor/Claude/Agents. Enforces 12 Rules + Critique Rubric. Zero slop.",
   "license": "Apache-2.0",
   "author": "Rick Blalock",
@@ -10,14 +10,9 @@
   "scripts": {
     "build": "node scripts/build.js",
     "verify:native-agents": "node scripts/verify-native-agents.js",
-    "verify:learn": "node scripts/verify-learn.js",
-    "verify:gate-reports": "node scripts/verify-gate-report.js",
-    "verify:pr-gate-diff": "node scripts/verify-pr-gate-diff.js",
     "verify:scenario-evals": "node scripts/verify-scenario-evals.js",
     "verify:drift": "node scripts/verify-drift.js",
-    "verify:status": "node scripts/verify-status.js",
-    "verify:e2e-loop": "node scripts/e2e-loop-tmp.js",
-    "verify": "npm run build && git diff --exit-code -- dist && npm run verify:native-agents && npm run verify:learn && npm run verify:gate-reports && npm run verify:pr-gate-diff && npm run verify:scenario-evals && npm run verify:drift && npm run verify:status && npm run verify:e2e-loop",
+    "verify": "npm run build && git diff --exit-code -- dist && npm run verify:native-agents && npm run verify:scenario-evals && npm run verify:drift",
     "prepublishOnly": "npm run verify",
     "release": "node scripts/release.js",
     "skills:install": "node bin/omakase.js skills install",
@@ -27,9 +22,6 @@
   "files": [
     "dist",
     "bin",
-    "scripts/omakase-learn.js",
-    "scripts/omakase-status.js",
-    "scripts/project-agents.js",
     "scripts/native-agents/generate.js",
     "OMAKASE-PRINCIPLES.md",
     "OMAKASE-RULES.md",

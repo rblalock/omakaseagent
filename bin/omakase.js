@@ -17,8 +17,6 @@ const distRoot = path.join(root, 'dist');
 const pkg = require(path.join(root, 'package.json'));
 const VERSION = pkg.version;
 const { LEAD_IDS } = require(path.join(root, 'scripts/native-agents/generate'));
-const { runLearn } = require(path.join(root, 'scripts/omakase-learn'));
-const { runStatus } = require(path.join(root, 'scripts/omakase-status'));
 
 const LEAD_AGENT_FILES = [...LEAD_IDS].map((id) => `${id}.md`);
 
@@ -467,64 +465,13 @@ Specialists (\`omakase-senior-reviewer\`, \`omakase-skill-judge\`, etc.) are int
 
   log(`  memory:  .omakaseagent/`);
   log(`  agents:  ${formatAgentSummary(nativeSummary)} (${harnesses.join(', ')})`);
-  log(`  next:    omakase learn   # repo factory (scenarios, gates)`);
-  log(`           @omakase-engineer <your task>`);
-}
-
-function learnProject(options = {}) {
-  const result = runLearn({
-    dryRun: !!options.dryRun,
-    memoryOnly: !!options.memoryOnly,
-    factoryOnly: !!options.factoryOnly,
-    projectAgentsOnly: !!options.projectAgentsOnly,
-  });
-
-  if (result.error) {
-    log(`error: ${result.message}`);
-    process.exit(1);
-  }
-
-  log(`omakase learn${result.dryRun ? ' --dry-run' : ''}`);
-  log(`  stack:     ${result.stack.join(', ')}`);
-  if (result.checks.length) {
-    log(`  checks:    ${result.checks.map((c) => c.cmd).join(', ')}`);
-  }
-  log(`  scenarios: ${result.scenarios.join(', ')}`);
-  if (result.loops?.length) {
-    log(`  loops:     ${result.loops.join(', ')}`);
-  }
-  if (result.projectAgents?.length) {
-    log(`  project:   ${result.projectAgents.join(', ')}`);
-  }
-  if (result.harnesses?.length) {
-    log(`  harness:   ${result.harnesses.join(', ')}`);
-  }
-
-  if (result.dryRun) {
-    log('  would write:');
-    for (const p of result.planned) log(`    ${p}`);
-    if (result.emitted?.length) {
-      log('  would emit:');
-      for (const p of result.emitted) log(`    ${p}`);
-    }
-    log('  (no files changed)');
-    return;
-  }
-
-  log(`  wrote ${result.written.length} file(s):`);
-  for (const p of result.written) log(`    ${p}`);
-  if (result.emitted?.length) {
-    log(`  emitted ${result.emitted.length} project agent stub(s):`);
-    for (const p of result.emitted) log(`    ${p}`);
-  }
+  log(`  next:    @omakase-engineer <your task>`);
 }
 
 function showHelp() {
   log(`omakase v${VERSION}`);
   log('');
   log('  omakase init [--test] [--global]');
-  log('  omakase learn [--dry-run] [--memory-only] [--factory-only] [--project-agents-only]');
-  log('  omakase status [loop] [--quiet] [--gates]   # loop state; --gates lists pending review paths');
   log('  omakase skills install [cursor|claude|agents|grok|codex] [--test] [--global]');
   log('  omakase skills uninstall [harness] [--global] [--test]');
   log('');
@@ -536,26 +483,8 @@ const isGlobal = flag('--global') || flag('-g');
 const noNative = flag('--no-native-agents');
 const installOpts = { test: isTest, global: isGlobal, nativeAgents: !noNative };
 
-const isDryRun = flag('--dry-run');
-const isMemoryOnly = flag('--memory-only');
-const isFactoryOnly = flag('--factory-only');
-const isProjectAgentsOnly = flag('--project-agents-only');
-
 if (command === 'init') {
   initProject(installOpts);
-} else if (command === 'learn') {
-  learnProject({
-    dryRun: isDryRun,
-    memoryOnly: isMemoryOnly,
-    factoryOnly: isFactoryOnly,
-    projectAgentsOnly: isProjectAgentsOnly,
-  });
-} else if (command === 'status') {
-  runStatus({
-    loop: sub && !sub.startsWith('-') ? sub : null,
-    quiet: flag('--quiet') || flag('-q'),
-    gates: flag('--gates') || flag('-g'),
-  });
 } else if (command === 'skills' && sub === 'install') {
   const explicit = args[2] && !args[2].startsWith('-') ? args[2] : null;
   if (explicit) {

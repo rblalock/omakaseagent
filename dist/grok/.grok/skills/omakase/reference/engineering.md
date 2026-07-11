@@ -65,7 +65,7 @@ Remove these by default on every piece of engineering work:
 
 Keep behavior identical unless the current behavior is a clear bug.
 
-**Prose in engineering deliverables:** READMEs, PR descriptions, gate report narrative, and user-facing error copy must satisfy `reference/prose.md` Baseline (applied live, same as code deslop). Full prose extensions merge only when critiquing or authoring prose-heavy artifacts — see `reference/critique.md`.
+**Prose in engineering deliverables:** READMEs, PR descriptions, handoffs, and user-facing error copy must satisfy `reference/prose.md` Baseline (applied live, same as code deslop). Full prose extensions merge only when critiquing or authoring prose-heavy artifacts — see `reference/critique.md`.
 
 ## How You Work
 

@@ -1,3 +1,5 @@
+> **Historical idea note (2026):** This doc predates removal of the dark-factory / loop product surface (`dark-factory.md`, `loops.md`, gate ceremony, `omakase learn`). Keep as inspiration only; references to those paths are obsolete.
+
 # Omakase Cloud — Full Vision
 
 *Status: idea. Brainstorm outcome, 2026-07-08 — a vision document, not an implementation plan. Slicing into buildable increments is deliberately deferred.*
