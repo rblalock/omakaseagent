@@ -297,6 +297,7 @@ code, pre { font-family: var(--mono); font-variant-ligatures: none; }
 }
 
 .hero-tagline p.lede {
+  font-family: var(--display);
   font-size: clamp(1.15rem, 2.2vw, 1.5rem);
   font-weight: 700;
   letter-spacing: 0.04em;
