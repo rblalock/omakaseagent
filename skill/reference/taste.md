@@ -22,6 +22,12 @@ Persistent taste lives in `.omakaseagent/taste.md` and `decisions.md` at the pro
 - `decisions.md` entries must always include **Context**, **Decision**, **Why**, and **Revisit if**.
 - Keep both files relatively small and high-signal. Summarize or archive when they grow.
 
+### Voice memory (only when observed)
+
+When a project has a real recurring voice, store a compact `## Voice` section in `taste.md`: sentence rhythm, vocabulary, punctuation, first-person scope, warmth, humor, and audience-specific differences. Derive it from explicit user direction or representative project artifacts; never invent a voice profile from generic preferences.
+
+Store the actionable profile and its scope, not the user's full private writing sample. A named sample supplied for one task does not become durable project memory unless the user asks.
+
 ## Quality Bar for Taste Entries
 
 An entry is good when a future agent (or human) can read it in 30 seconds and make meaningfully better decisions on the next piece of work.

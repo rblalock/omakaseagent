@@ -1,0 +1,26 @@
+{
+  "id": "prose-humanize-restraint",
+  "title": "Humanizing prose uses clustered smells and respects house style",
+  "seedPrompt": "Review polished human prose containing one em dash, curly quotes, a real three-item list, and formal vocabulary.",
+  "targets": [
+    {
+      "path": "skill/reference/prose.md",
+      "mustMatch": ["choose the lightest one that works", "Treat isolated hits as weak evidence", "Em dashes are not banned", "Do not normalize punctuation"]
+    },
+    {
+      "path": "skill/reference/prose-patterns.md",
+      "mustMatch": ["editing smells, not authorship tests", "False-positive restraint", "Project taste outranks generic detection", "Never create these signals from nothing"]
+    },
+    {
+      "path": "skill/teams/critics/lead.md",
+      "mustMatch": ["explicit humanize/voice-match request", "semantic lock", "reference/prose-patterns.md"]
+    },
+    {
+      "path": "skill-chat/SKILL.md.tmpl",
+      "mustMatch": ["clustered editing smells, not proof of AI authorship", "Project voice outranks mechanical punctuation or formatting rules"]
+    }
+  ],
+  "requiredEvidence": ["clustered patterns", "house style preserved", "minimal edit"],
+  "forbiddenFailures": ["hard punctuation ban", "authorship detector verdict", "sterile rewrite of clean prose"],
+  "criticRubric": ["Ruthless Simplicity", "Context Fidelity", "Taste & Voice"]
+}

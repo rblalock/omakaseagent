@@ -91,6 +91,7 @@ for (const h of harnesses) {
     'SKILL.md',
     'reference/engineering.md',
     'reference/prose.md',
+    'reference/prose-patterns.md',
     'reference/critique.md',
     'reference/plan.md',
     'reference/init.md',

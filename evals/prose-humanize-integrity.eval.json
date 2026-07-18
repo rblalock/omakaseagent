@@ -1,0 +1,26 @@
+{
+  "id": "prose-humanize-integrity",
+  "title": "Humanizing prose preserves semantic integrity",
+  "seedPrompt": "Humanize this sourced customer story and match the provided author sample without changing any facts, quotes, numbers, links, or uncertainty.",
+  "targets": [
+    {
+      "path": "skill/core/omakase-core.md",
+      "mustMatch": ["Semantic integrity is non-negotiable", "invented facts, experiences, opinions, quotes, numbers, sources, or certainty"]
+    },
+    {
+      "path": "skill/reference/prose.md",
+      "mustMatch": ["Semantic lock", "Preserve meaning, not accidental shape", "Never manufacture vulnerability, lived experience, or a personal opinion", "Deliver the final artifact by default"]
+    },
+    {
+      "path": "skill/teams/critics/sub-personas/deslop-critic.md",
+      "mustMatch": ["Voice match", "never manufacture facts, experiences, opinions, or quirks", "Deliver the final artifact by default"]
+    },
+    {
+      "path": "skill-chat/SKILL.md.tmpl",
+      "mustMatch": ["Prose integrity", "never manufacture biography, vulnerability, or personal opinion", "Return the final artifact by default"]
+    }
+  ],
+  "requiredEvidence": ["semantic ledger", "no invented experience", "final artifact only"],
+  "forbiddenFailures": ["fabricated anecdote", "changed quote or number", "lost qualifier", "draft and audit transcript by default"],
+  "criticRubric": ["Context Fidelity", "Taste & Voice", "Excellence Gate"]
+}

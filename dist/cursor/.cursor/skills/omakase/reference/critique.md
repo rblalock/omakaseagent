@@ -68,6 +68,8 @@ When in doubt, prefer **asking once** over guessing. Never silently apply the wr
 - Structural tells (binary contrasts, false agency, meta-commentary, dramatic fragmentation)
 - Directness, rhythm, trust, authenticity, density (lightweight 5-dimension score when helpful)
 - Context Fidelity to `taste.md` voice — deletion must not flatten intentional brand register
+- Semantic integrity for rewrites — facts, experiences, quotes, numbers, sources, and required qualifiers remain unchanged
+- For explicit humanize/voice-match or deep prose audits, clustered content and voice smells from `reference/prose-patterns.md`
 
 **Baseline prose deslop** (from `reference/prose.md` Baseline section) applies to **every agent** on any prose they write, even when prose extensions are not formally merged for critique.
 

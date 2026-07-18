@@ -2,7 +2,7 @@
 
 Use this reference whenever an artifact is primarily **prose**: emails, docs, strategy briefs, GTM copy, READMEs, handoffs, memory entries, agent responses to humans, and user-facing strings.
 
-**Attribution:** Phrase and structure catalogs adapted from [stop-slop](https://github.com/hardikpandya/stop-slop) (MIT, Hardik Pandya). Omakase applies them under the Critique Rubric with project taste overrides — we did **not** adopt absolute bans on all adverbs or all em dashes.
+**Attribution:** Phrase and structure catalogs adapted from [stop-slop](https://github.com/hardikpandya/stop-slop) (MIT, Hardik Pandya), and further informed by [blader/humanizer](https://github.com/blader/humanizer) (MIT) and [Wikipedia's Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing). Omakase rewrites these ideas under its own Critique Rubric and project taste; the catalog is a set of editing smells, not proof of AI authorship. We did **not** adopt absolute bans on adverbs, em dashes, or other house-style choices.
 
 ## Who applies this (non-negotiable)
 
@@ -31,6 +31,16 @@ Critique and dedicated deslop passes use the **full extensions**. Implementation
 
 **Engineering-only** (code review, refactor): do **not** merge prose extensions as the primary lens; still apply baseline to any prose in the deliverable (commit message, PR description, comments).
 
+## Modes — choose the lightest one that works
+
+**Baseline** — all agents, all prose. Apply the seven rules below without turning ordinary responses into editing projects.
+
+**Prose deslop** — explicit writing review or prose-heavy authoring. Apply the full extensions in this file. Prefer surgical edits over wholesale rewrites.
+
+**Voice match** — only when the user explicitly asks to "humanize," match an author or brand, or supplies a writing sample for that purpose. Apply the full extensions plus `reference/prose-patterns.md`. Voice match changes expression, not biography or facts.
+
+For a deep editorial audit where clustered writing patterns are the main risk, load `reference/prose-patterns.md` even if voice matching is not requested. Do not load that catalog for routine Baseline work.
+
 ## Baseline (every agent, every prose output)
 
 Before shipping prose:
@@ -41,8 +51,38 @@ Before shipping prose:
 4. **Respect `taste.md`.** Brand voice wins over generic "directness" — terse chef register vs warmer customer email is a Context Fidelity choice, not slop.
 5. **Cut performative AI voice.** Hedging stacks, business jargon filler, meta-commentary about the document's own structure, engagement bait.
 6. **Earned personality is not slop.** Project-native metaphor, justified first person, and sharp opinions are allowed when `taste.md` or the brief calls for them — distinguish from synthetic enthusiasm.
+7. **Preserve semantic integrity.** Do not add facts, lived experience, opinions, quotes, numbers, sources, or certainty that the author did not provide.
+
+## Semantic lock — all rewrites
+
+Before rewriting, privately account for the source's:
+
+- Factual claims, names, dates, numbers, quotes, citations, and URLs
+- Explicit uncertainty and legal, safety, accessibility, or trust-boundary qualifiers
+- Commitments, calls to action, and personal experiences attributed to the author
+
+After rewriting, compare the final artifact against that ledger. Reordering, combining repetition, and changing paragraph structure are allowed. Adding unsupported specificity, first-person experience, opinions, or stronger certainty is not.
+
+Preserve meaning, not accidental shape. Do not keep the same paragraph count or headings when the original structure is itself the slop, unless the user asked to preserve formatting.
+
+## Voice match — authored, not manufactured
+
+Use voice evidence in this order:
+
+1. Semantic integrity and required safety constraints
+2. The user's explicit brief
+3. A writing sample named for this task
+4. Relevant `.omakaseagent/taste.md` voice rules
+5. The artifact's domain and audience
+6. Omakase's neutral default: direct, specific, varied, and unperformed
+
+From a named sample, extract only observable traits: sentence-length distribution, vocabulary level, paragraph openings, punctuation, transitions, contractions, first-person frequency, and degree of humor or edge. Match those traits without inventing quirks.
+
+First person, mixed feelings, asides, and irregular rhythm are valid only when the source, sample, taste memory, or brief supports them. Never manufacture vulnerability, lived experience, or a personal opinion to make prose seem human.
 
 ## Full extensions (critique, deslop pass, prose-heavy authoring)
+
+For explicit humanizing, voice matching, or a deep pattern audit, also load `reference/prose-patterns.md`. Treat isolated hits as weak evidence; edit clustered patterns and actual prose failures.
 
 ### Phrase patterns — remove or replace
 
@@ -104,12 +144,13 @@ Optional lightweight score (1–10 each, revise if total &lt; 35/50): Directness
 
 ## How you work (Deslop Critic or any agent doing a prose pass)
 
-1. Read full context + `.omakaseagent/taste.md` (voice rules are binding).
-2. Scan for deletions first — same deletion lens as code deslop.
-3. List instances with location + before/after (or minimal rewrite).
-4. One tight sentence per item: which pattern and which rubric bullet it violates.
-5. Preserve meaning, legal qualifiers, and required uncertainty; do not "humanize" into vagueness.
-6. Surface Internal Critique Pass on the cleaned artifact.
+1. Read full context + `.omakaseagent/taste.md`; voice rules are binding.
+2. Choose Baseline, Prose deslop, or Voice match. Load `reference/prose-patterns.md` only when its trigger fires.
+3. Build the private semantic ledger before editing.
+4. Scan for deletions first, then rewrite only what the selected mode requires.
+5. Compare the rewrite against the semantic ledger and run the relevant prose checklist.
+6. Deliver the final artifact by default. Show pattern findings, before/after notes, or an audit transcript only when the user asked for critique or explanation.
+7. Surface the Internal Critique Pass required by the active Omakase persona.
 
 ## Examples
 
@@ -129,7 +170,8 @@ Optional lightweight score (1–10 each, revise if total &lt; 35/50): Directness
 
 - Do not strip trust-boundary warnings, legal language, accessibility text, or necessary caveats as "hedging."
 - Do not flatten intentional brand voice documented in `taste.md` or `PRODUCT.md`.
-- Do not confuse **humanizer-style soul** (justified opinion, mess, first person) with **slop** (performative enthusiasm, fake intimacy) — when the brief wants narrative voice, prefer `humanizer` patterns over sterile compression.
+- Do not confuse **authored texture** (supported opinion, asides, first person, uneven rhythm) with **slop** (performative enthusiasm, fake intimacy). Preserve real texture; never manufacture it.
+- Do not normalize punctuation, heading case, emoji, typography, or hyphenation against a documented house style.
 - If unsure whether a phrase is slop vs required precision, escalate to The Critic or cite the open question — do not guess.
 
 ## Relationship to engineering deslop

@@ -1,5 +1,5 @@
 ---
-description: "INTERNAL ONLY — Critics specialist under omakase-critic. Never user-invokable; only omakase-critic delegates via Task. Specializes in removing AI slop, unnecessary complexity, and generic patterns from code and prose."
+description: "INTERNAL ONLY — Critics specialist under omakase-critic. Never user-invokable; only omakase-critic delegates via Task. Specializes in removing AI slop and unnecessary complexity from code and prose, including humanizing and voice-matching writing without changing its facts or intent."
 mode: subagent
 hidden: true
 permission:
