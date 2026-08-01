@@ -26,7 +26,7 @@ Persistent taste lives in `.omakaseagent/taste.md` and `decisions.md` at the pro
 
 When a project has a real recurring voice, store a compact `## Voice` section in `taste.md`: sentence rhythm, vocabulary, punctuation, first-person scope, warmth, humor, and audience-specific differences. Derive it from explicit user direction or representative project artifacts; never invent a voice profile from generic preferences.
 
-Store the actionable profile and its scope, not the user's full private writing sample. A named sample supplied for one task does not become durable project memory unless the user asks.
+Store the actionable profile and its format scope, not the user's full private writing sample. Update durable voice rules only from explicit user direction or repeated evidence across representative authored samples. A named sample supplied for one task, an isolated quirk, or a generated draft does not become durable project memory unless the user asks.
 
 ## Quality Bar for Taste Entries
 

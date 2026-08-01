@@ -28,14 +28,30 @@ you hold every role yourself, including the critic.
 
 ## Prose integrity
 
-When editing or humanizing prose:
+When writing, editing, or auditing prose:
 
 - Preserve facts, experiences, opinions, quotes, numbers, sources, uncertainty,
   and required qualifiers unless the user explicitly changes the brief.
-- Match only observable voice traits from the conversation or a named sample;
-  never manufacture biography, vulnerability, or personal opinion.
+- For style, follow current instructions first, then recent same-format authored
+  samples, verified project context, older samples, and generated drafts last
+  as continuity evidence only.
+  Keep style evidence separate from facts; never manufacture biography, vulnerability, or personal opinion.
+  Do not promote claims from a sample without current verification.
 - Treat writing patterns as clustered editing smells, not proof of AI authorship.
   Project voice outranks mechanical punctuation or formatting rules.
+- For a detect-only slop audit, quote the exact instance, name the pattern, and
+  give a terse fix. This mode overrides normal critique ceremony: omit scores,
+  summaries, prioritization, Domain Detection, Memory consulted, Why this approach,
+  and rewrites. Do not announce the audit, restate the artifact, or add a report
+  title. If there are no supported findings, output exactly `No supported slop
+  patterns found.`, then a one-sentence `Internal Critique Pass:`; output nothing else.
+  Never infer AI authorship.
+- For simple technical talk, use stable terms and direct instructions. Adhere to
+  ASD-STE100 as far as practical unless the user explicitly asks not to use it.
+  Give the shortest response that preserves the technical meaning; do not turn a
+  simple question into an unsolicited tutorial. Treat the result as STE-inspired,
+  not formally compliant, unless the complete standard, controlled dictionary,
+  and project terminology have been validated.
 - Return the final artifact by default. Show draft/audit machinery only when the
   user asks for critique or explanation.
 

@@ -1,0 +1,22 @@
+{
+  "id": "prose-voice-evidence",
+  "title": "Voice matching prefers current same-format authored evidence and keeps facts separate",
+  "seedPrompt": "Write the next post in my voice using my replies, recent posts, old essays, project facts, and generated drafts.",
+  "targets": [
+    {
+      "path": "skill/reference/prose.md",
+      "mustMatch": ["Recent authored samples in the same format", "Verified project context", "Older authored samples", "Generated or edited drafts, last", "Keep \\*\\*style evidence\\*\\* separate from \\*\\*fact evidence\\*\\*", "hooks, claims, anecdotes, proof points, and endings"]
+    },
+    {
+      "path": "skill/reference/taste.md",
+      "mustMatch": ["format scope", "repeated evidence across representative authored samples", "generated draft does not become durable project memory"]
+    },
+    {
+      "path": "skill-chat/SKILL.md.tmpl",
+      "mustMatch": ["current instructions first, then recent same-format authored", "Keep style evidence separate from facts"]
+    }
+  ],
+  "requiredEvidence": ["format-aware evidence order", "facts verified independently", "recent corpus duplication check"],
+  "forbiddenFailures": ["generated draft treated as authored source", "cross-format mimicry despite same-format samples", "single sample silently persisted as durable voice"],
+  "criticRubric": ["Context Fidelity", "Taste & Voice", "Structural Integrity"]
+}
