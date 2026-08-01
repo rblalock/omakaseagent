@@ -2,7 +2,7 @@
 
 Load this catalog only for explicit humanizing, voice matching, or a deep editorial audit. Routine Omakase prose uses the Baseline in `reference/prose.md`.
 
-**Lineage:** Omakase-authored synthesis informed by [blader/humanizer](https://github.com/blader/humanizer) (MIT), [Wikipedia's Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), and the existing stop-slop-derived Omakase prose rules. These are editing smells, not authorship tests. Diagnose clusters and the underlying prose failure; do not mechanically erase isolated words or punctuation.
+**Lineage:** Omakase-authored synthesis informed by [blader/humanizer](https://github.com/blader/humanizer) (MIT), [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) (MIT, Peter Yang), [Wikipedia's Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), and the existing stop-slop-derived Omakase prose rules. These are editing smells, not authorship tests. Diagnose clusters and the underlying prose failure; do not mechanically erase isolated words or punctuation.
 
 ## Evidence and specificity
 
@@ -26,6 +26,7 @@ Load this catalog only for explicit humanizing, voice matching, or a deep editor
 - **Decorative emphasis** — repeated bold labels, inline-header lists, emojis, or title treatment simulate hierarchy without improving scanning. Project style decides what counts as excess.
 - **Fragmented headings** — a heading is followed by a generic sentence that merely restates it before the real content begins.
 - **Generic conclusions** — the ending promises a bright future, continued excellence, or exciting times instead of closing on a decision, fact, consequence, or next action.
+- **Colon reveal** — a setup clause and colon manufacture suspense before an ordinary claim. State the claim directly unless the format earns the reveal.
 - **Diff-anchored documentation** — evergreen docs narrate what was added, changed, or replaced instead of describing the current behavior. Changelogs, migrations, and release notes are intentionally version-scoped.
 - **Outline sediment** — sections exist because a template suggested them, even though they contain no distinct claim.
 
@@ -34,7 +35,9 @@ Load this catalog only for explicit humanizing, voice matching, or a deep editor
 - **Chatbot residue** — greetings, assurances, praise, "I hope this helps," and offers to continue leak into the artifact.
 - **Sycophancy** — agreement and praise replace a direct response to the author's actual point.
 - **Authority theater** — "the real question," "at its core," or "what truly matters" announces profundity before an ordinary claim.
+- **Faux-insight setup** — "what everyone misses" or "the thing nobody tells you" presents a familiar point as hidden knowledge without evidence.
 - **Aphorism formulas** — "X is the language/currency/architecture of Y" makes a reusable slogan where a concrete claim belongs.
+- **Fake-profound kicker** — an ornamental aphorism or universal lesson closes the piece after its real conclusion. End on the concrete consequence or next action.
 - **Fake-candid openings** — "Honestly?", "Real talk," or "Here's the thing" performs intimacy before a routine statement.
 
 ## False-positive restraint

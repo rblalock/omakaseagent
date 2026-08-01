@@ -1,6 +1,6 @@
 {
   "name": "omakaseagent",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Omakase — the chef's standard. Portable senior-craftsmanship skill (markdown-first) + npx omakaseagent skills install for Cursor/Claude/Agents. Enforces 12 Rules + Critique Rubric. Zero slop.",
   "license": "Apache-2.0",
   "author": "Rick Blalock",

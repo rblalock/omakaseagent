@@ -2,7 +2,7 @@
 
 Use this reference whenever an artifact is primarily **prose**: emails, docs, strategy briefs, GTM copy, READMEs, handoffs, memory entries, agent responses to humans, and user-facing strings.
 
-**Attribution:** Phrase and structure catalogs adapted from [stop-slop](https://github.com/hardikpandya/stop-slop) (MIT, Hardik Pandya), and further informed by [blader/humanizer](https://github.com/blader/humanizer) (MIT) and [Wikipedia's Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing). Omakase rewrites these ideas under its own Critique Rubric and project taste; the catalog is a set of editing smells, not proof of AI authorship. We did **not** adopt absolute bans on adverbs, em dashes, or other house-style choices.
+**Attribution:** Phrase and structure catalogs adapted from [stop-slop](https://github.com/hardikpandya/stop-slop) (MIT, Hardik Pandya), and further informed by [blader/humanizer](https://github.com/blader/humanizer) (MIT), [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) (MIT, Peter Yang), and [Wikipedia's Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing). Format-aware voice evidence is informed by [MengTo/Skills `write-like-meng-on-x`](https://github.com/MengTo/Skills/tree/main/agent-skills/codex/write-like-meng-on-x) (MIT, Meng To). Omakase rewrites these ideas under its own Critique Rubric and project taste; the catalog is a set of editing smells, not proof of AI authorship. We did **not** adopt absolute bans on adverbs, em dashes, or other house-style choices.
 
 ## Who applies this (non-negotiable)
 
@@ -37,7 +37,13 @@ Critique and dedicated deslop passes use the **full extensions**. Implementation
 
 **Prose deslop** — explicit writing review or prose-heavy authoring. Apply the full extensions in this file. Prefer surgical edits over wholesale rewrites.
 
+**Detect only** — when the user asks whether prose reads as AI slop or requests pattern findings without a rewrite. For each finding, quote the exact instance, name the observed pattern, and give a terse fix. This narrow mode overrides normal critique ceremony: omit scores, summaries, prioritization, Domain Detection, Memory consulted, Why this approach, and rewrites. Do not announce the audit, narrate delegation, restate the artifact, or add a report title. Retain only the required Internal Critique Pass. If no supported pattern appears, output exactly `No supported slop patterns found.`, then a one-sentence `Internal Critique Pass:`; output nothing else. Do not infer or claim AI authorship; these are editing smells, not provenance evidence.
+
 **Voice match** — only when the user explicitly asks to "humanize," match an author or brand, or supplies a writing sample for that purpose. Apply the full extensions plus `reference/prose-patterns.md`. Voice match changes expression, not biography or facts.
+
+**Technical clarity** — when the user asks for simple technical talk. Use one stable term per concept, one action per instruction, direct verbs, named actors, and conditions before commands. Use the shortest response that preserves the technical meaning; do not expand a simple question into an unsolicited tutorial.
+
+**STE-inspired technical clarity** — only when the user explicitly asks for ASD-STE100, Simplified Technical English, or equivalent adherence. Apply Technical clarity and adhere to **ASD-STE100 Simplified Technical English as far as practical** while preserving required technical meaning and project terminology. Treat the result as **STE-inspired**, not formally ASD-STE100 compliant, unless the complete applicable standard, controlled dictionary, and project terminology have been validated.
 
 For a deep editorial audit where clustered writing patterns are the main risk, load `reference/prose-patterns.md` even if voice matching is not requested. Do not load that catalog for routine Baseline work.
 
@@ -67,18 +73,24 @@ Preserve meaning, not accidental shape. Do not keep the same paragraph count or 
 
 ## Voice match — authored, not manufactured
 
-Use voice evidence in this order:
+Semantic integrity and required safety constraints govern every choice. For **style**, use evidence in this order:
 
-1. Semantic integrity and required safety constraints
-2. The user's explicit brief
-3. A writing sample named for this task
-4. Relevant `.omakaseagent/taste.md` voice rules
-5. The artifact's domain and audience
+1. Current user instructions and the explicit brief
+2. Recent authored samples in the same format
+3. Verified project context, including relevant `.omakaseagent/taste.md` voice rules
+4. Older authored samples, preferring the same format
+5. Generated or edited drafts, last and only as continuity evidence
 6. Omakase's neutral default: direct, specific, varied, and unperformed
+
+Format matters: replies teach conversational phrasing; posts, essays, documentation, and customer email each teach their own structure. Do not infer one format's cadence from another when same-format evidence exists.
+
+Keep **style evidence** separate from **fact evidence**. Samples support observable expression; facts must come from the current source, the user, or verified project context. Never promote a claim from an older sample or generated draft into the semantic ledger without current verification.
 
 From a named sample, extract only observable traits: sentence-length distribution, vocabulary level, paragraph openings, punctuation, transitions, contractions, first-person frequency, and degree of humor or edge. Match those traits without inventing quirks.
 
 First person, mixed feelings, asides, and irregular rhythm are valid only when the source, sample, taste memory, or brief supports them. Never manufacture vulnerability, lived experience, or a personal opinion to make prose seem human.
+
+For recurring publishing, check recent work before drafting: hooks, claims, anecdotes, proof points, and endings. Reuse deliberately, not accidentally, and do not imply novelty when the corpus shows repetition.
 
 ## Full extensions (critique, deslop pass, prose-heavy authoring)
 
@@ -145,10 +157,10 @@ Optional lightweight score (1–10 each, revise if total &lt; 35/50): Directness
 ## How you work (Deslop Critic or any agent doing a prose pass)
 
 1. Read full context + `.omakaseagent/taste.md`; voice rules are binding.
-2. Choose Baseline, Prose deslop, or Voice match. Load `reference/prose-patterns.md` only when its trigger fires.
-3. Build the private semantic ledger before editing.
-4. Scan for deletions first, then rewrite only what the selected mode requires.
-5. Compare the rewrite against the semantic ledger and run the relevant prose checklist.
+2. Choose Baseline, Prose deslop, Detect only, Voice match, Technical clarity, or STE-inspired technical clarity. Load `reference/prose-patterns.md` only when its trigger fires.
+3. Build the private semantic ledger before editing. In Detect only mode, preserve the draft and report only exact instances, named patterns, and terse fixes.
+4. In editing modes, scan for deletions first, then rewrite only what the selected mode requires. Detect only skips this step.
+5. Compare any rewrite against the semantic ledger and run the relevant prose checklist.
 6. Deliver the final artifact by default. Show pattern findings, before/after notes, or an audit transcript only when the user asked for critique or explanation.
 7. Surface the Internal Critique Pass required by the active Omakase persona.
 

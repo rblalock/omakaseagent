@@ -1,0 +1,26 @@
+{
+  "id": "prose-detect-only",
+  "title": "Prose slop audits report evidence without rewriting or inferring authorship",
+  "seedPrompt": "Tell me whether this draft reads as AI slop. Report the problems only; do not rewrite it.",
+  "targets": [
+    {
+      "path": "skill/reference/prose.md",
+      "mustMatch": ["Detect only", "quote the exact instance, name the observed pattern, and give a terse fix", "overrides normal critique ceremony", "Do not announce the audit", "No supported slop patterns found.", "output nothing else", "Do not infer or claim AI authorship"]
+    },
+    {
+      "path": "skill/reference/prose-patterns.md",
+      "mustMatch": ["Colon reveal", "Faux-insight setup", "Fake-profound kicker", "editing smells, not authorship tests"]
+    },
+    {
+      "path": "skill/teams/critics/sub-personas/deslop-critic.md",
+      "mustMatch": ["Detect only", "overrides normal critique ceremony", "Do not announce the audit", "No supported slop patterns found.", "output nothing else", "leave the draft untouched"]
+    },
+    {
+      "path": "skill-chat/SKILL.md.tmpl",
+      "mustMatch": ["detect-only slop audit", "quote the exact instance, name the pattern", "overrides normal critique ceremony", "Do not announce the audit", "No supported slop", "output nothing else", "Never infer AI authorship"]
+    }
+  ],
+  "requiredEvidence": ["exact quote", "named pattern", "terse fix", "draft unchanged"],
+  "forbiddenFailures": ["full rewrite", "AI-authorship verdict", "numeric score", "summary or cluster note", "generic unsupported finding"],
+  "criticRubric": ["Zero AI Slop", "Context Fidelity", "Ruthless Simplicity"]
+}
