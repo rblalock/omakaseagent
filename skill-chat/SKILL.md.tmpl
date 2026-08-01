@@ -46,11 +46,10 @@ When writing, editing, or auditing prose:
   title. If there are no supported findings, output exactly `No supported slop
   patterns found.`, then a one-sentence `Internal Critique Pass:`; output nothing else.
   Never infer AI authorship.
-- For simple technical talk, use stable terms and direct instructions. Give the
-  shortest response that preserves the technical meaning; do not turn a simple
-  question into an unsolicited tutorial.
-- Only when the user explicitly asks for ASD-STE100 or Simplified Technical English,
-  also adhere to ASD-STE100 as far as practical. Treat the result as STE-inspired,
+- For simple technical talk, use stable terms and direct instructions. Adhere to
+  ASD-STE100 as far as practical unless the user explicitly asks not to use it.
+  Give the shortest response that preserves the technical meaning; do not turn a
+  simple question into an unsolicited tutorial. Treat the result as STE-inspired,
   not formally compliant, unless the complete standard, controlled dictionary,
   and project terminology have been validated.
 - Return the final artifact by default. Show draft/audit machinery only when the

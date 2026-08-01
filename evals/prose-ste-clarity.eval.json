@@ -1,23 +1,23 @@
 {
   "id": "prose-ste-clarity",
-  "title": "Technical clarity stays concise and uses ASD-STE100 only when explicitly requested",
+  "title": "Simple technical talk uses concise STE-inspired clarity by default with an explicit opt-out",
   "seedPrompt": "Explain this technical procedure in simple technical talk. Adhere to ASD-STE100 as much as possible.",
   "targets": [
     {
       "path": "skill/core/omakase-core.md",
-      "mustMatch": ["Simple technical talk", "Explicit ASD-STE100 / Simplified Technical English request", "load `reference/prose.md`", "STE-inspired technical clarity", "shortest sufficient answer", "never claim formal compliance"]
+      "mustMatch": ["Simple technical talk", "load `reference/prose.md`", "STE-inspired technical clarity", "by default", "shortest sufficient answer", "explicitly opts out", "never claim formal compliance"]
     },
     {
       "path": "skill/reference/prose.md",
-      "mustMatch": ["Technical clarity", "only when the user explicitly asks", "adhere to \\*\\*ASD-STE100 Simplified Technical English as far as practical\\*\\*", "one stable term per concept", "shortest response that preserves the technical meaning", "not formally ASD-STE100 compliant", "complete applicable standard, controlled dictionary, and project terminology"]
+      "mustMatch": ["Technical clarity", "the default for simple technical talk", "unless the user explicitly asks not to use ASD-STE100 guidance", "adhere to \\*\\*ASD-STE100 Simplified Technical English as far as practical\\*\\*", "one stable term per concept", "shortest response that preserves the technical meaning", "not formally ASD-STE100 compliant", "complete applicable standard, controlled dictionary, and project terminology"]
     },
     {
       "path": "skill/teams/critics/sub-personas/deslop-critic.md",
-      "mustMatch": ["Technical clarity", "only for an explicit ASD-STE100 or Simplified Technical English request", "never claim formal compliance"]
+      "mustMatch": ["Technical clarity", "the default for simple technical talk", "unless the user explicitly opts out", "never claim formal compliance"]
     },
     {
       "path": "skill-chat/SKILL.md.tmpl",
-      "mustMatch": ["For simple technical talk", "Only when the user explicitly asks", "adhere to ASD-STE100 as far as practical", "shortest response", "unsolicited tutorial", "Treat the result as STE-inspired"]
+      "mustMatch": ["For simple technical talk", "Adhere to", "ASD-STE100 as far as practical unless the user explicitly asks not to use it", "shortest response", "unsolicited tutorial", "Treat the result as STE-inspired"]
     }
   ],
   "requiredEvidence": ["stable terminology", "direct instructions", "technical meaning preserved", "proportionate response length", "qualified compliance language"],

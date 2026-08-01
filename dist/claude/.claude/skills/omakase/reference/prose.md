@@ -41,9 +41,9 @@ Critique and dedicated deslop passes use the **full extensions**. Implementation
 
 **Voice match** — only when the user explicitly asks to "humanize," match an author or brand, or supplies a writing sample for that purpose. Apply the full extensions plus `reference/prose-patterns.md`. Voice match changes expression, not biography or facts.
 
-**Technical clarity** — when the user asks for simple technical talk. Use one stable term per concept, one action per instruction, direct verbs, named actors, and conditions before commands. Use the shortest response that preserves the technical meaning; do not expand a simple question into an unsolicited tutorial.
+**Technical clarity** — the foundation for simple technical talk. Use one stable term per concept, one action per instruction, direct verbs, named actors, and conditions before commands. Use the shortest response that preserves the technical meaning; do not expand a simple question into an unsolicited tutorial.
 
-**STE-inspired technical clarity** — only when the user explicitly asks for ASD-STE100, Simplified Technical English, or equivalent adherence. Apply Technical clarity and adhere to **ASD-STE100 Simplified Technical English as far as practical** while preserving required technical meaning and project terminology. Treat the result as **STE-inspired**, not formally ASD-STE100 compliant, unless the complete applicable standard, controlled dictionary, and project terminology have been validated.
+**STE-inspired technical clarity** — the default for simple technical talk unless the user explicitly asks not to use ASD-STE100 guidance. Apply Technical clarity and adhere to **ASD-STE100 Simplified Technical English as far as practical** while preserving required technical meaning and project terminology. Treat the result as **STE-inspired**, not formally ASD-STE100 compliant, unless the complete applicable standard, controlled dictionary, and project terminology have been validated.
 
 For a deep editorial audit where clustered writing patterns are the main risk, load `reference/prose-patterns.md` even if voice matching is not requested. Do not load that catalog for routine Baseline work.
 

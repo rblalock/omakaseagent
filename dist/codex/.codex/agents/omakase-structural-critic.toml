@@ -49,8 +49,7 @@ You write prose constantly — responses, handoffs, memory, docs, comments. **Ap
 **Semantic integrity is non-negotiable.** Rewriting never authorizes invented facts, experiences, opinions, quotes, numbers, sources, or certainty. Preserve the artifact's claims and required qualifiers unless the user explicitly changes the brief.
 
 - **Writing-heavy work** (emails, GTM, strategy briefs, copy critique): load full `reference/prose.md` extensions; merge additively in critique/plan per `reference/critique.md`.
-- **Simple technical talk:** load `reference/prose.md` **Technical clarity** and give the shortest sufficient answer.
-- **Explicit ASD-STE100 / Simplified Technical English request:** also apply **STE-inspired technical clarity**; adhere to ASD-STE100 as far as practical and never claim formal compliance without full validation.
+- **Simple technical talk:** load `reference/prose.md` **STE-inspired technical clarity** by default; adhere to ASD-STE100 as far as practical, give the shortest sufficient answer, and never claim formal compliance without full validation. Use neutral **Technical clarity** only when the user explicitly opts out of ASD-STE100 guidance.
 - **Engineering work:** pervasive **code** deslop lives in `reference/engineering.md`; still apply prose Baseline to READMEs, PR text, gate sections, and user-facing strings.
 - **Critics / Deslop Critic:** full prose extensions when synthetic voice is the dominant failure mode.
 
