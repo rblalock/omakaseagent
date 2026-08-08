@@ -26,6 +26,7 @@ const HARNESS_CONFIG = {
   agents: { dotDir: '.agents', label: 'Agents / OpenCode', distName: 'agents' },
   grok: { dotDir: '.grok', label: 'Grok Build', distName: 'grok' },
   codex: { dotDir: '.codex', label: 'Codex', distName: 'codex' },
+  hermes: { dotDir: '.hermes', label: 'Hermes Agent', distName: 'hermes' },
 };
 
 /** Dist subtrees copied on install (relative to dist/<harness>/). */
@@ -35,6 +36,7 @@ const DIST_OVERLAYS = {
   agents: ['.agents', '.opencode'],
   grok: ['.grok'],
   codex: ['.codex'],
+  hermes: ['.hermes'],
 };
 
 const NATIVE_AGENT_GLOBS = {
@@ -58,8 +60,58 @@ function detectHarness() {
   if (fs.existsSync(path.join(cwd, '.cursor'))) return 'cursor';
   if (fs.existsSync(path.join(cwd, '.claude'))) return 'claude';
   if (fs.existsSync(path.join(cwd, '.codex'))) return 'codex';
+  if (fs.existsSync(path.join(cwd, '.hermes'))) return 'hermes';
   if (fs.existsSync(path.join(cwd, '.agents'))) return 'agents';
   return 'agents';
+}
+
+function hermesHome() {
+  return process.env.HERMES_HOME || path.join(os.homedir(), '.hermes');
+}
+
+function installHermesSkills(options = {}) {
+  const isTest = !!options.test;
+  const quiet = !!options.quiet;
+  const treeSource = path.join(distRoot, 'hermes', '.hermes', 'skills');
+  if (!fs.existsSync(treeSource)) {
+    log('error: no dist bundle for hermes — run npm run build in the omakase repo');
+    process.exit(1);
+  }
+  const hh = hermesHome();
+  const dstSkills = path.join(hh, 'skills');
+  if (!quiet) log(`install hermes → ${dstSkills}`);
+
+  // Copy each category/skill folder (software-development/omakase*)
+  function walkCopy(src, dst) {
+    copyRecursive(src, dst);
+  }
+  walkCopy(treeSource, dstSkills);
+
+  if (isTest) {
+    for (const name of [
+      'omakase',
+      'omakase-engineer',
+      'omakase-critic',
+      'omakase-archivist',
+    ]) {
+      const from = path.join(dstSkills, 'software-development', name);
+      const to = path.join(dstSkills, 'software-development', `${name}-test`);
+      if (fs.existsSync(from)) {
+        if (fs.existsSync(to)) fs.rmSync(to, { recursive: true, force: true });
+        fs.renameSync(from, to);
+      }
+    }
+  }
+
+  if (!quiet) {
+    log('  skill + leads (omakase, omakase-engineer, omakase-critic, omakase-archivist)');
+    log('  start a new Hermes session to pick up skills');
+  }
+  return { harness: 'hermes', nativeSummary: { unique: 0, byLocation: {} }, copied: [dstSkills] };
+}
+
+function installBaseDir(harness, isGlobal) {
+  return isGlobal ? os.homedir() : process.cwd();
 }
 
 function isValidHarness(h) {
@@ -212,8 +264,12 @@ function installSkills(targetHarness, options = {}) {
 
   if (targetHarness && !isValidHarness(harness)) {
     log(`error: unknown harness "${targetHarness}"`);
-    log('supported: cursor | claude | agents | grok | codex');
+    log('supported: cursor | claude | agents | grok | codex | hermes');
     process.exit(1);
+  }
+
+  if (harness === 'hermes') {
+    return installHermesSkills(options);
   }
 
   const cfg = HARNESS_CONFIG[harness];
@@ -228,7 +284,7 @@ function installSkills(targetHarness, options = {}) {
 
   const quiet = !!options.quiet;
   const cwd = process.cwd();
-  const baseDir = isGlobal ? os.homedir() : cwd;
+  const baseDir = installBaseDir(harness, isGlobal);
   const targetDot = path.join(baseDir, dotDirName);
   const skillName = isTest ? 'omakase-test' : 'omakase';
   const targetLabel = isGlobal ? `~/${dotDirName}` : dotDirName;
@@ -330,6 +386,23 @@ function uninstallSkills(targetHarness, options = {}) {
   if (targetHarness && !isValidHarness(harness)) {
     log(`error: unknown harness "${targetHarness}"`);
     process.exit(1);
+  }
+
+  if (harness === 'hermes') {
+    const hh = hermesHome();
+    const suffix = isTest ? '-test' : '';
+    log(`uninstall hermes → ${path.join(hh, 'skills')}`);
+    for (const name of [
+      `omakase${suffix}`,
+      `omakase-engineer${suffix}`,
+      `omakase-critic${suffix}`,
+      `omakase-archivist${suffix}`,
+    ]) {
+      const dir = path.join(hh, 'skills', 'software-development', name);
+      if (fs.existsSync(dir)) fs.rmSync(dir, { recursive: true, force: true });
+    }
+    log('  done');
+    return;
   }
 
   const cfg = HARNESS_CONFIG[harness];
@@ -472,10 +545,11 @@ function showHelp() {
   log(`omakase v${VERSION}`);
   log('');
   log('  omakase init [--test] [--global]');
-  log('  omakase skills install [cursor|claude|agents|grok|codex] [--test] [--global]');
+  log('  omakase skills install [cursor|claude|agents|grok|codex|hermes] [--test] [--global]');
   log('  omakase skills uninstall [harness] [--global] [--test]');
   log('');
   log('  leads: @omakase-engineer | @omakase-critic | @omakase-archivist');
+  log('  hermes: omakase skills install hermes  (uses $HERMES_HOME or ~/.hermes)');
 }
 
 const isTest = flag('--test') || flag('-t');
