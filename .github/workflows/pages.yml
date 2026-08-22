@@ -22,11 +22,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Assemble artifact (site + skill zip)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Build generated artifacts
         run: |
-          mkdir -p _site
-          cp -r site/. _site/
-          cp dist/omakase-skill.zip _site/omakase-skill.zip
+          npm ci --ignore-scripts
+          npm run build
+      - name: Assemble site artifact
+        run: node scripts/assemble-site.js _site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
