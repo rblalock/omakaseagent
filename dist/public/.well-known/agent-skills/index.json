@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "omakase",
+      "type": "skill-md",
+      "description": "Apply the Omakase standard, the chef's standard for quality, to writing, plans, analysis, documents, and code. Use when the user mentions omakase, when quality matters more than speed, or before delivering any substantial piece of work. Enforces twelve rules and a critique gate so nothing mediocre is delivered.",
+      "url": "/.well-known/agent-skills/omakase/SKILL.md",
+      "digest": "sha256:cbb23f064c3ffc7554545fc49c3cc4ffb3d519d7a7d114926beb366e0d98e994"
+    }
+  ]
+}

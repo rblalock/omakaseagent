@@ -9,6 +9,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const { generateNativeAgents } = require('./native-agents/generate');
 
 const root = path.resolve(__dirname, '..');
@@ -305,6 +306,41 @@ function buildChatSkill() {
   );
   fs.writeFileSync(path.join(distRoot, 'omakase-skill.zip'), Buffer.from(zipped));
   console.log(`✓ Chat skill → dist/chat/omakase/SKILL.md + dist/omakase-skill.zip (${zipped.length} bytes)`);
+
+  const publicRoot = path.join(distRoot, 'public');
+  const publicSkillDir = path.join(
+    publicRoot,
+    '.well-known/agent-skills/omakase'
+  );
+  rimraf(publicRoot);
+  fs.mkdirSync(publicSkillDir, { recursive: true });
+
+  const skillBytes = Buffer.from(rendered);
+  const publicSkillPath = path.join(publicSkillDir, 'SKILL.md');
+  fs.writeFileSync(publicSkillPath, skillBytes);
+
+  const description = rendered.match(/^description:\s*(.+)$/m)?.[1];
+  if (!description) {
+    console.error('\nBUILD FAILED: chat skill description missing');
+    process.exit(1);
+  }
+
+  const digest = `sha256:${crypto.createHash('sha256').update(skillBytes).digest('hex')}`;
+  const index = {
+    $schema: 'https://schemas.agentskills.io/discovery/0.2.0/schema.json',
+    skills: [
+      {
+        name: 'omakase',
+        type: 'skill-md',
+        description,
+        url: '/.well-known/agent-skills/omakase/SKILL.md',
+        digest,
+      },
+    ],
+  };
+  const indexPath = path.join(publicRoot, '.well-known/agent-skills/index.json');
+  fs.writeFileSync(indexPath, `${JSON.stringify(index, null, 2)}\n`);
+  console.log(`✓ Agent Skills discovery → dist/public/.well-known/agent-skills (${digest})`);
 }
 
 buildChatSkill();
@@ -327,6 +363,7 @@ const ALLOWED_PREFIXES = [
   'dist/hermes/.hermes/skills/software-development/omakase-critic/',
   'dist/hermes/.hermes/skills/software-development/omakase-archivist/',
   'dist/chat/omakase/',
+  'dist/public/.well-known/agent-skills/',
   'dist/omakase-skill.zip',
 ];
 
