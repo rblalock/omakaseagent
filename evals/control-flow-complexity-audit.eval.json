@@ -1,0 +1,49 @@
+{
+  "id": "control-flow-complexity-audit",
+  "title": "Branch-heavy simplification uses comparable complexity evidence and preserves behavior",
+  "seedPrompt": "Refactor this branch-heavy pricing function. The repository already reports cyclomatic complexity; prove that the refactor simplifies it without changing behavior.",
+  "targets": [
+    {
+      "path": "skill/reference/engineering.md",
+      "mustMatch": [
+        "Control-flow complexity audit",
+        "same tool, version, configuration, and code scope",
+        "hotspot and delta evidence, not an acceptance verdict",
+        "derive the cases instead of enumerating them",
+        "truth table or property test"
+      ]
+    },
+    {
+      "path": "skill/teams/engineering/lead.md",
+      "mustMatch": ["branch-heavy hotspots", "same tool, version, configuration, and code scope", "raw delta as evidence, not a verdict", "derives cases instead of enumerating them", "behavior-boundary tests"]
+    },
+    {
+      "path": "skill/teams/engineering/sub-personas/refactor-specialist.md",
+      "mustMatch": ["same tool, version, configuration, and code scope", "raw delta as evidence, not a verdict", "derives cases instead of enumerating them", "behavior-boundary tests"]
+    },
+    {
+      "path": "skill/teams/critics/sub-personas/verification-critic.md",
+      "mustMatch": ["repository's existing analyzer", "tool, version, configuration, and code scope identical", "behavior preservation"]
+    },
+    {
+      "path": "dist/codex/.codex/agents/omakase-engineer.toml",
+      "mustMatch": ["same tool, version, configuration, and code scope", "raw delta as evidence, not a verdict", "derives cases instead of enumerating them", "behavior-boundary tests"]
+    },
+    {
+      "path": "dist/codex/.codex/agents/omakase-refactor-specialist.toml",
+      "mustMatch": ["same tool, version, configuration, and code scope", "raw delta as evidence, not a verdict", "derives cases instead of enumerating them", "behavior-boundary tests"]
+    }
+  ],
+  "requiredEvidence": [
+    "same analyzer baseline and treatment",
+    "raw metric delta",
+    "branch-to-invariant reasoning",
+    "focused behavior-boundary tests"
+  ],
+  "forbiddenFailures": [
+    "complexity reduction claimed without a comparable baseline",
+    "score treated as proof of correctness",
+    "behavior tests omitted"
+  ],
+  "criticRubric": ["Code Judo & Structural Simplification", "Pragmatic Craftsmanship", "Excellence Gate"]
+}

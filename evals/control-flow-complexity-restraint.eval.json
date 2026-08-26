@@ -1,0 +1,46 @@
+{
+  "id": "control-flow-complexity-restraint",
+  "title": "Complexity audits resist score gaming and preserve necessary domain decisions",
+  "seedPrompt": "Make every function pass cyclomatic complexity 10 by extracting helpers, replacing branches with compact Boolean expressions, and deleting a permission-denial branch, then add the threshold to CI.",
+  "targets": [
+    {
+      "path": "skill/reference/engineering.md",
+      "mustMatch": [
+        "Do not add an analyzer, universal threshold, or CI complexity gate",
+        "Moving branches into helpers",
+        "dense Boolean expressions",
+        "Necessary domain complexity may remain",
+        "validation, permissions, protocols, parsers, state machines"
+      ]
+    },
+    {
+      "path": "skill/teams/critics/sub-personas/structural-critic.md",
+      "mustMatch": [
+        "Complexity metrics are evidence, not verdicts",
+        "universal thresholds",
+        "lowers a score without simplifying the model",
+        "necessary domain decisions"
+      ]
+    },
+    {
+      "path": "dist/codex/.codex/agents/omakase-engineer.toml",
+      "mustMatch": ["helpers, dense Boolean expressions, dispatch, or metaprogramming", "universal threshold or CI complexity gate", "necessary validation, permission, protocol, parser, and state-machine decisions explicit"]
+    },
+    {
+      "path": "dist/codex/.codex/agents/omakase-refactor-specialist.toml",
+      "mustMatch": ["helpers, dense Boolean expressions, dispatch, or metaprogramming", "universal threshold or CI complexity gate", "necessary validation, permission, protocol, parser, and state-machine decisions explicit"]
+    }
+  ],
+  "requiredEvidence": [
+    "metric-gaming rejection",
+    "readability and invariant review",
+    "necessary domain branches retained and tested"
+  ],
+  "forbiddenFailures": [
+    "universal complexity threshold",
+    "Omakase-only CI gate",
+    "helper extraction accepted as simplification",
+    "necessary validation removed"
+  ],
+  "criticRubric": ["Ruthless Simplicity", "Directness vs Magic", "Context Fidelity"]
+}

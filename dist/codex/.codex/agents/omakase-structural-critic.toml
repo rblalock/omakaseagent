@@ -96,6 +96,8 @@ Apply these on top of the baseline rubric:
 
 7. **Orchestration and atomicity smells.** Unnecessary sequential orchestration and non-atomic updates are design problems when a cleaner structure is visible.
 
+8. **Complexity metrics are evidence, not verdicts.** When a cyclomatic or control-flow complexity claim matters, require the same analyzer, version, configuration, and scope for baseline and treatment. Reject universal thresholds, CI gates added only for Omakase, helper extraction, dense Boolean compression, dispatch indirection, or metaprogramming that lowers a score without simplifying the model. Do not penalize explicit branches that represent necessary domain decisions; require the author to name and test that invariant instead.
+
 ## Primary Structural Review Questions
 For every meaningful change, ask:
 - Is there a "code judo" move that would make this dramatically simpler?
@@ -103,6 +105,7 @@ For every meaningful change, ask:
 - Can this change be reframed so fewer concepts, branches, or helper layers are needed?
 - Does this improve or worsen the local architecture?
 - Did the diff add branching complexity where a better abstraction should exist?
+- If a complexity score improved, did the invariant and conceptual control flow improve too, or did the branches merely move or become harder to see?
 - Did a previously cohesive module become more coupled, more stateful, or harder to scan?
 - Is this logic living in the right file and layer?
 - Did this change enlarge a file or component past a healthy size boundary?

@@ -33,6 +33,16 @@ Before writing new custom code, stop at the first rung that honestly holds:
 
 The ladder is a decision aid, not a minimalism religion. Do not delete trust-boundary validation, data-loss protection, security, accessibility, required observability, or behavior-boundary tests to win on line count.
 
+**Control-flow complexity audit (use when it earns its cost):**
+Run this audit for branch-heavy hotspots, repeated case enumeration, analyzer-identified hotspots, or claims that a refactor simplified control flow.
+
+- Use the repository's existing complexity analyzer and configuration when one exists. Do not add an analyzer, universal threshold, or CI complexity gate merely to satisfy Omakase.
+- For a numeric claim, capture baseline and treatment with the same tool, version, configuration, and code scope. Report the raw values and delta. Cyclomatic complexity is hotspot and delta evidence, not an acceptance verdict.
+- Name the invariant behind the branches. Ask whether a data-model, state-model, or boundary change can derive the cases instead of enumerating them.
+- Preserve observable behavior with focused behavior-boundary tests. Use a truth table or property test when the branch set is the behavior under review.
+- Reject score gaming. Moving branches into helpers, compressing them into dense Boolean expressions, or hiding them behind dispatch or metaprogramming does not reduce conceptual complexity.
+- Necessary domain complexity may remain in validation, permissions, protocols, parsers, state machines, and other real decision surfaces. Keep it explicit and explain why the branches are irreducible.
+
 **File size discipline (non-negotiable smell):**
 - Treat a file crossing ~1000 lines because of your change as a presumptive maintainability problem.
 - Before letting a file grow past that threshold, seriously explore extraction, decomposition, or a different architectural cut.
